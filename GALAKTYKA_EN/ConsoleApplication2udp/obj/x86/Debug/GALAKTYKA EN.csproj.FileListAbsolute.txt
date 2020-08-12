@@ -17,3 +17,22 @@ C:\Users\Marcin\Desktop\Nowy folder (7)\GALAKTYKA_EN\ConsoleApplication2udp\obj\
 C:\Users\Marcin\Desktop\Nowy folder (7)\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.application
 C:\Users\Marcin\Desktop\Nowy folder (7)\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.exe
 C:\Users\Marcin\Desktop\Nowy folder (7)\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.pdb
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC EN.exe.config
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC EN.exe.manifest
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC EN.application
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC EN.exe
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC EN.pdb
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\bin\Debug\Interop.WMPLib.dll
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EN.csprojAssemblyReference.cache
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EN.csproj.ResolveComReference.cache
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form1.resources
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form2.resources
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Properties.Resources.resources
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EN.csproj.GenerateResource.cache
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.exe.manifest
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.application
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.exe
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.pdb
