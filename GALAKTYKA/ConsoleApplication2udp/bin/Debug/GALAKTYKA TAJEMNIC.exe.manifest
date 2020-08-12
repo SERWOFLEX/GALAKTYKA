@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GALAKTYKA TAJEMNIC.exe" size="174536">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GALAKTYKA TAJEMNIC.exe" size="177608">
       <assemblyIdentity name="GALAKTYKA TAJEMNIC" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>sOxWfifK+KS0iVVqujXsI22XNFs=</dsig:DigestValue>
+        <dsig:DigestValue>VfayU8Q601rBtwK1Zgha5J37oZ0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

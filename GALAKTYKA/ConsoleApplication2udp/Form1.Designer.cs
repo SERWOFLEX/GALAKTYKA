@@ -73,6 +73,15 @@
             this.WOJNA_PLAYER = new AxWMPLib.AxWindowsMediaPlayer();
             this.STATEK_PLAYER = new AxWMPLib.AxWindowsMediaPlayer();
             this.CZASY_PALYER = new AxWMPLib.AxWindowsMediaPlayer();
+            this.textBox_SPEAK = new System.Windows.Forms.TextBox();
+            this.button_PLAY_SPEAK = new System.Windows.Forms.Button();
+            this.label_TEMPO = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label_VOL_TEKST_NA_MOWE = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.trackBar_TEMPO = new System.Windows.Forms.TrackBar();
+            this.trackBar_VOL_TEXT_NA_MOWE = new System.Windows.Forms.TrackBar();
+            this.label11 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -81,26 +90,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.WOJNA_PLAYER)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.STATEK_PLAYER)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CZASY_PALYER)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_TEMPO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_VOL_TEXT_NA_MOWE)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_message
             // 
-            this.textBox_message.Location = new System.Drawing.Point(435, 541);
+            this.textBox_message.Location = new System.Drawing.Point(531, 33);
             this.textBox_message.Multiline = true;
             this.textBox_message.Name = "textBox_message";
             this.textBox_message.Size = new System.Drawing.Size(192, 28);
             this.textBox_message.TabIndex = 0;
             this.textBox_message.Text = "RESET";
+            this.textBox_message.Visible = false;
             this.textBox_message.TextChanged += new System.EventHandler(this.textBox_message_TextChanged);
             // 
             // button_send
             // 
-            this.button_send.Location = new System.Drawing.Point(486, 629);
+            this.button_send.Location = new System.Drawing.Point(582, 121);
             this.button_send.Name = "button_send";
             this.button_send.Size = new System.Drawing.Size(82, 20);
             this.button_send.TabIndex = 1;
             this.button_send.Text = "Send";
             this.button_send.UseVisualStyleBackColor = true;
+            this.button_send.Visible = false;
             this.button_send.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox_received
@@ -115,11 +128,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Lime;
-            this.label1.Location = new System.Drawing.Point(384, 555);
+            this.label1.Location = new System.Drawing.Point(480, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Mesage";
+            this.label1.Visible = false;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -137,45 +151,49 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(356, 589);
+            this.label3.Location = new System.Drawing.Point(452, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "IP Destination";
+            this.label3.Visible = false;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox_ip
             // 
-            this.textBox_ip.Location = new System.Drawing.Point(435, 577);
+            this.textBox_ip.Location = new System.Drawing.Point(531, 69);
             this.textBox_ip.Name = "textBox_ip";
             this.textBox_ip.Size = new System.Drawing.Size(192, 20);
             this.textBox_ip.TabIndex = 6;
             this.textBox_ip.Text = "192.168.100.156";
+            this.textBox_ip.Visible = false;
             this.textBox_ip.TextChanged += new System.EventHandler(this.textBox_ip_TextChanged);
             // 
             // textBox_port
             // 
-            this.textBox_port.Location = new System.Drawing.Point(435, 603);
+            this.textBox_port.Location = new System.Drawing.Point(531, 95);
             this.textBox_port.Name = "textBox_port";
             this.textBox_port.Size = new System.Drawing.Size(192, 20);
             this.textBox_port.TabIndex = 8;
             this.textBox_port.Text = "49955";
+            this.textBox_port.Visible = false;
             this.textBox_port.TextChanged += new System.EventHandler(this.textBox_port_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Lime;
-            this.label4.Location = new System.Drawing.Point(403, 612);
+            this.label4.Location = new System.Drawing.Point(499, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Port";
+            this.label4.Visible = false;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(932, 0);
+            this.button1.Location = new System.Drawing.Point(1013, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 23);
             this.button1.TabIndex = 9;
@@ -189,7 +207,7 @@
             this.uSTAWIENIAToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1026, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1097, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -204,7 +222,7 @@
             // dZWIĘKIToolStripMenuItem
             // 
             this.dZWIĘKIToolStripMenuItem.Name = "dZWIĘKIToolStripMenuItem";
-            this.dZWIĘKIToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.dZWIĘKIToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dZWIĘKIToolStripMenuItem.Text = "DŹWIĘKI";
             this.dZWIĘKIToolStripMenuItem.Click += new System.EventHandler(this.dZWIĘKIToolStripMenuItem_Click);
             // 
@@ -217,7 +235,7 @@
             this.Panel1.Controls.Add(this.label8);
             this.Panel1.Controls.Add(this.label10);
             this.Panel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Panel1.Location = new System.Drawing.Point(12, 361);
+            this.Panel1.Location = new System.Drawing.Point(13, 345);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(351, 41);
             this.Panel1.TabIndex = 109;
@@ -273,7 +291,8 @@
             // 
             // button_START_GRY
             // 
-            this.button_START_GRY.Location = new System.Drawing.Point(12, 407);
+            this.button_START_GRY.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button_START_GRY.Location = new System.Drawing.Point(13, 391);
             this.button_START_GRY.Name = "button_START_GRY";
             this.button_START_GRY.Size = new System.Drawing.Size(95, 25);
             this.button_START_GRY.TabIndex = 110;
@@ -283,7 +302,8 @@
             // 
             // button_STOP_GRY
             // 
-            this.button_STOP_GRY.Location = new System.Drawing.Point(141, 407);
+            this.button_STOP_GRY.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button_STOP_GRY.Location = new System.Drawing.Point(142, 391);
             this.button_STOP_GRY.Name = "button_STOP_GRY";
             this.button_STOP_GRY.Size = new System.Drawing.Size(95, 25);
             this.button_STOP_GRY.TabIndex = 111;
@@ -293,7 +313,8 @@
             // 
             // button_RESET
             // 
-            this.button_RESET.Location = new System.Drawing.Point(268, 407);
+            this.button_RESET.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button_RESET.Location = new System.Drawing.Point(269, 391);
             this.button_RESET.Name = "button_RESET";
             this.button_RESET.Size = new System.Drawing.Size(95, 25);
             this.button_RESET.TabIndex = 112;
@@ -472,7 +493,7 @@
             this.label_INFO.AutoSize = true;
             this.label_INFO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_INFO.ForeColor = System.Drawing.Color.Lime;
-            this.label_INFO.Location = new System.Drawing.Point(121, 320);
+            this.label_INFO.Location = new System.Drawing.Point(121, 314);
             this.label_INFO.Name = "label_INFO";
             this.label_INFO.Size = new System.Drawing.Size(140, 24);
             this.label_INFO.TabIndex = 135;
@@ -511,13 +532,112 @@
             this.CZASY_PALYER.Visible = false;
             this.CZASY_PALYER.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.CZASY_PALYER_PlayStateChange);
             // 
+            // textBox_SPEAK
+            // 
+            this.textBox_SPEAK.Location = new System.Drawing.Point(751, 56);
+            this.textBox_SPEAK.Multiline = true;
+            this.textBox_SPEAK.Name = "textBox_SPEAK";
+            this.textBox_SPEAK.Size = new System.Drawing.Size(314, 135);
+            this.textBox_SPEAK.TabIndex = 136;
+            // 
+            // button_PLAY_SPEAK
+            // 
+            this.button_PLAY_SPEAK.Location = new System.Drawing.Point(875, 245);
+            this.button_PLAY_SPEAK.Name = "button_PLAY_SPEAK";
+            this.button_PLAY_SPEAK.Size = new System.Drawing.Size(75, 23);
+            this.button_PLAY_SPEAK.TabIndex = 137;
+            this.button_PLAY_SPEAK.Text = "PLAY";
+            this.button_PLAY_SPEAK.UseVisualStyleBackColor = true;
+            this.button_PLAY_SPEAK.Click += new System.EventHandler(this.button_PLAY_SPEAK_Click);
+            // 
+            // label_TEMPO
+            // 
+            this.label_TEMPO.AutoSize = true;
+            this.label_TEMPO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_TEMPO.Location = new System.Drawing.Point(903, 423);
+            this.label_TEMPO.Name = "label_TEMPO";
+            this.label_TEMPO.Size = new System.Drawing.Size(13, 13);
+            this.label_TEMPO.TabIndex = 143;
+            this.label_TEMPO.Text = "0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label12.Location = new System.Drawing.Point(887, 375);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 13);
+            this.label12.TabIndex = 142;
+            this.label12.Text = "TEMPO";
+            // 
+            // label_VOL_TEKST_NA_MOWE
+            // 
+            this.label_VOL_TEKST_NA_MOWE.AutoSize = true;
+            this.label_VOL_TEKST_NA_MOWE.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_VOL_TEKST_NA_MOWE.Location = new System.Drawing.Point(903, 351);
+            this.label_VOL_TEKST_NA_MOWE.Name = "label_VOL_TEKST_NA_MOWE";
+            this.label_VOL_TEKST_NA_MOWE.Size = new System.Drawing.Size(13, 13);
+            this.label_VOL_TEKST_NA_MOWE.TabIndex = 141;
+            this.label_VOL_TEKST_NA_MOWE.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label15.Location = new System.Drawing.Point(830, 304);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(166, 13);
+            this.label15.TabIndex = 140;
+            this.label15.Text = "VOLUME TEKST NA MOWĘ";
+            // 
+            // trackBar_TEMPO
+            // 
+            this.trackBar_TEMPO.Location = new System.Drawing.Point(855, 391);
+            this.trackBar_TEMPO.Minimum = -10;
+            this.trackBar_TEMPO.Name = "trackBar_TEMPO";
+            this.trackBar_TEMPO.Size = new System.Drawing.Size(104, 45);
+            this.trackBar_TEMPO.TabIndex = 139;
+            this.trackBar_TEMPO.Value = 10;
+            this.trackBar_TEMPO.Scroll += new System.EventHandler(this.trackBar_TEMPO_Scroll);
+            // 
+            // trackBar_VOL_TEXT_NA_MOWE
+            // 
+            this.trackBar_VOL_TEXT_NA_MOWE.Location = new System.Drawing.Point(751, 320);
+            this.trackBar_VOL_TEXT_NA_MOWE.Maximum = 100;
+            this.trackBar_VOL_TEXT_NA_MOWE.Name = "trackBar_VOL_TEXT_NA_MOWE";
+            this.trackBar_VOL_TEXT_NA_MOWE.Size = new System.Drawing.Size(314, 45);
+            this.trackBar_VOL_TEXT_NA_MOWE.TabIndex = 138;
+            this.trackBar_VOL_TEXT_NA_MOWE.Scroll += new System.EventHandler(this.trackBar_VOL_TEXT_NA_MOWE_Scroll);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label11.Location = new System.Drawing.Point(748, 40);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 13);
+            this.label11.TabIndex = 144;
+            this.label11.Text = "TEKST NA MOWĘ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1026, 655);
+            this.ClientSize = new System.Drawing.Size(1097, 473);
             this.ControlBox = false;
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label_TEMPO);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label_VOL_TEKST_NA_MOWE);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.trackBar_TEMPO);
+            this.Controls.Add(this.trackBar_VOL_TEXT_NA_MOWE);
+            this.Controls.Add(this.button_PLAY_SPEAK);
+            this.Controls.Add(this.textBox_SPEAK);
             this.Controls.Add(this.label_INFO);
             this.Controls.Add(this.label_PALAC);
             this.Controls.Add(this.label_KAPSULA);
@@ -569,6 +689,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.WOJNA_PLAYER)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.STATEK_PLAYER)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CZASY_PALYER)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_TEMPO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_VOL_TEXT_NA_MOWE)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -619,6 +741,15 @@
         private System.Windows.Forms.Label label_KAPSULA;
         private System.Windows.Forms.Label label_PALAC;
         private System.Windows.Forms.Label label_INFO;
+        private System.Windows.Forms.TextBox textBox_SPEAK;
+        private System.Windows.Forms.Button button_PLAY_SPEAK;
+        private System.Windows.Forms.Label label_TEMPO;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label_VOL_TEKST_NA_MOWE;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TrackBar trackBar_TEMPO;
+        private System.Windows.Forms.TrackBar trackBar_VOL_TEXT_NA_MOWE;
+        private System.Windows.Forms.Label label11;
     }
 }
 

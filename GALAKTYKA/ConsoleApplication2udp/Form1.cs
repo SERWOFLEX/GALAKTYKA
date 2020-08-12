@@ -14,11 +14,16 @@ using System.Diagnostics;
 using Microsoft.Win32;
 using System.IO;
 using System.Windows;
+using System.Speech;
+using System.Speech.Synthesis;
 
 namespace ConsoleApplication2udp
 {
     public partial class Form1 : Form
     {
+        private SpeechSynthesizer _SS = new SpeechSynthesizer();
+        public int tempo = -2;
+        public int SSvolume = 80;
 
         public int minuty = 75;
         public int sekundy = 60;
@@ -26,6 +31,8 @@ namespace ConsoleApplication2udp
 
         public Form1()
         {
+            _SS.Volume = SSvolume;
+            _SS.Rate = tempo;
             InitializeComponent();
         }
 
@@ -69,18 +76,30 @@ namespace ConsoleApplication2udp
             String vol_odlicz = WOJNA_PLAYER.settings.volume.ToString();
             label14.Text = vol_odlicz;
 
+            _SS.Volume = SSvolume;
+            trackBar_VOL_TEXT_NA_MOWE.Value = SSvolume;
+            String vol_TEXT = SSvolume.ToString();
+            label_VOL_TEKST_NA_MOWE.Text = vol_TEXT;
+
+            _SS.Rate = tempo;
+            trackBar_TEMPO.Value = _SS.Rate;
+            String TEMPO = tempo.ToString();
+            label_TEMPO.Text = TEMPO;
+
+
+
             Thread thdUDPServer = new Thread(new ThreadStart(serverThread));
             thdUDPServer.Start();
         }
 
         public void serverThread()
         {
-           
 
-            UdpClient udpClient = new UdpClient(49955);
+
+            UdpClient udpClient = new UdpClient(Convert.ToInt32(textBox_port.Text));
             while (true)
             {
-                IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 49955);
+                IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, Convert.ToInt32(textBox_port.Text));
                 Byte[] receiveBytes = udpClient.Receive(ref RemoteIpEndPoint);
                 string returnData = Encoding.ASCII.GetString(receiveBytes);
                
@@ -91,7 +110,7 @@ namespace ConsoleApplication2udp
                     listBox_received.SelectedIndex = listBox_received.Items.Count - 1;
                     listBox_received.SelectedIndex = -1;
 
-                    if (returnData == "start" + "")
+                    if (returnData == "START GRY")
                     // if (returnData.ToString() == "ODEBRANO" + "\r")
                     {
                         if (stan_GRY == 0) { 
@@ -99,20 +118,24 @@ namespace ConsoleApplication2udp
                         STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_SCIEZKA;
                         timer1.Start();
                             stan_GRY = 1;
+                        }   
+
                     }
-                }
-                    else if (returnData == "SKANOWANIE" + "")
+                    if (returnData == "START GRY")
                     {
-                       
+                        button_START_GRY.PerformClick();
                     }
-                    else if (returnData == "ZAGADKA 1 ZALOGOWANA" + "")
+
+                    if (returnData == "PLAY ODLICZANIE")
                     {
-                       
+                        button_KAPSULA.PerformClick();
                     }
-                    else
+
+                    if (returnData == "PLAY PALAC")
                     {
-                       // Button2.BackColor = DefaultBackColor;
+                        button_PALAC.PerformClick();
                     }
+
 
                 }));
             }
@@ -434,6 +457,34 @@ namespace ConsoleApplication2udp
         private void textBox_message_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_PLAY_SPEAK_Click(object sender, EventArgs e)
+        {
+            _SS.SpeakAsync(textBox_SPEAK.Text);
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            _SS.SpeakAsyncCancelAll();
+            base.OnClosing(e);
+
+
+        }
+
+        private void trackBar_VOL_TEXT_NA_MOWE_Scroll(object sender, EventArgs e)
+        {
+            String val = trackBar_VOL_TEXT_NA_MOWE.Value.ToString();
+            label_VOL_TEKST_NA_MOWE.Text = val;
+            _SS.Volume = trackBar_VOL_TEXT_NA_MOWE.Value;
+            SSvolume = trackBar_VOL_TEXT_NA_MOWE.Value;
+        }
+
+        private void trackBar_TEMPO_Scroll(object sender, EventArgs e)
+        {
+            String val1 = trackBar_TEMPO.Value.ToString();
+            label_TEMPO.Text = val1;
+            _SS.Rate = trackBar_TEMPO.Value;
+            tempo = trackBar_TEMPO.Value;
         }
     }
 }
