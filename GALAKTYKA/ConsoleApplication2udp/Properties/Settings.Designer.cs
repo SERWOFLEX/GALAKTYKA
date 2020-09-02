@@ -130,5 +130,17 @@ namespace ConsoleApplication2udp.Properties {
                 this["MUZYKA_PALAC_SCIEZKA"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CENTRALNE_IP {
+            get {
+                return ((string)(this["CENTRALNE_IP"]));
+            }
+            set {
+                this["CENTRALNE_IP"] = value;
+            }
+        }
     }
 }

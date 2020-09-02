@@ -16,6 +16,7 @@ using System.IO;
 using System.Windows;
 using System.Speech;
 using System.Speech.Synthesis;
+using System.Net.NetworkInformation;
 
 namespace ConsoleApplication2udp
 {
@@ -86,13 +87,24 @@ namespace ConsoleApplication2udp
             String TEMPO = tempo.ToString();
             label_TEMPO.Text = TEMPO;
 
+            bool isAvailable = NetworkInterface.GetIsNetworkAvailable();
+            if (isAvailable == true)
+            {
+                Thread thdUDPServer = new Thread(new ThreadStart(ServerThread));
+                thdUDPServer.Start();
+                timer2.Start();
+            }
+            else
+            {
+                // MessageBox.Show("BRAK POŁACZENIA Z SIECIĄ");
+                label_SIEC.Text = "BRAK POŁACZENIA Z SIECIĄ SPRAWDŹ POŁĄCZENIE I URUCHOM PONOWNIE PROGRAM";
+            }
 
-
-            Thread thdUDPServer = new Thread(new ThreadStart(serverThread));
-            thdUDPServer.Start();
+            //Thread thdUDPServer = new Thread(new ThreadStart(serverThread));
+            //thdUDPServer.Start();
         }
 
-        public void serverThread()
+        public void ServerThread()
         {
 
 
@@ -134,9 +146,13 @@ namespace ConsoleApplication2udp
                     if (returnData == "PLAY PALAC")
                     {
                         button_PALAC.PerformClick();
+                        STATEK_PLAYER.settings.volume = 10;
+                        trackBar2.Value = STATEK_PLAYER.settings.volume;
+                        String vol_muz = STATEK_PLAYER.settings.volume.ToString();
+                        label9.Text = vol_muz;
                     }
 
-
+                    returnData = "";
                 }));
             }
         }
@@ -234,8 +250,20 @@ namespace ConsoleApplication2udp
            minuty = 75;
             label8.Text = "0";
             label7.Text = "75";
-            listBox_received.Items.Clear();
-            stan_GRY = 0;
+            UdpClient udpClient = new UdpClient();
+            udpClient.Connect(Properties.Settings.Default.CENTRALNE_IP, Convert.ToInt32(textBox_port.Text));
+
+
+            Byte[] senddata = Encoding.ASCII.GetBytes("RESET");
+
+            udpClient.Send(senddata, senddata.Length);
+
+            udpClient.Close();
+
+            for (int i = 0; i < senddata.Length; i++)
+            {
+                senddata[i] = 0;
+            }
         }
 
         private void dZWIĘKIToolStripMenuItem_Click(object sender, EventArgs e)
@@ -485,6 +513,119 @@ namespace ConsoleApplication2udp
             label_TEMPO.Text = val1;
             _SS.Rate = trackBar_TEMPO.Value;
             tempo = trackBar_TEMPO.Value;
+        }
+
+        private void button_ZAPISZ_Click(object sender, EventArgs e)
+        {
+            StreamWriter Write;
+
+            SaveFileDialog savePlaylist = new SaveFileDialog();
+            savePlaylist.RestoreDirectory = false;
+            try
+            {
+                savePlaylist.InitialDirectory = "C:\\Users\\Desktop\\LISTA PODPOWIEDZI";
+                savePlaylist.Filter = ("TXT File|*.txt|All Files|*.*");
+
+                savePlaylist.ShowDialog();
+
+                Write = new StreamWriter(savePlaylist.FileName);
+
+                for (int I = 0; I < listBox_WIDOK.Items.Count; I++)
+                {
+                    Write.WriteLine(listBox_WIDOK.Items[I]);
+
+
+                }
+
+
+                MessageBox.Show("LISTA PODPOWIEDZI ZAPISANA");
+                Write.Close();
+            }
+
+            catch //(Exception ex)
+            {
+                return;
+            }
+        }
+
+        private void button_DODAJ_Click(object sender, EventArgs e)
+        {
+            listBox_WIDOK.Items.Add(textBox_SPEAK.Text);
+        }
+
+        private void button_PLAY_PODPOWIEDZ_Click(object sender, EventArgs e)
+        {
+            _SS.SpeakAsync(listBox_WIDOK.SelectedItem.ToString());
+        }
+
+        private void button_WCZYTAJ_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog loadPlaylist = new OpenFileDialog();
+            loadPlaylist.Multiselect = false;
+
+
+           
+            this.listBox_WIDOK.Items.Clear();
+
+            try
+            {
+                loadPlaylist.ShowDialog();
+
+                loadPlaylist.InitialDirectory = "C:\\Users\\Desktop\\LISTA PODPOWIEDZI";
+
+                //txtLoad.Text = loadPlaylist.Filename;
+                StreamReader playlist = new StreamReader(loadPlaylist.FileName);
+
+
+                while (playlist.Peek() >= 0)
+
+                    listBox_WIDOK.Items.Add(playlist.ReadLine());
+
+                //txtLoad.Text = loadPlaylist.FileName;
+
+
+
+            }
+
+            catch
+            {
+
+
+                return;
+            }
+            
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            bool isAvailable = NetworkInterface.GetIsNetworkAvailable();
+            if (isAvailable == true)
+            {
+                label_SIEC.Text = "";
+            }
+            else
+            {
+                // MessageBox.Show("BRAK POŁACZENIA Z SIECIĄ");
+                label_SIEC.Text = "BRAK POŁACZENIA Z SIECIĄ";
+            }
+        }
+
+        private void button_RESET_KULE_Click(object sender, EventArgs e)
+        {
+            UdpClient udpClient = new UdpClient();
+            udpClient.Connect(Properties.Settings.Default.CENTRALNE_IP, Convert.ToInt32(textBox_port.Text));
+
+
+            Byte[] senddata = Encoding.ASCII.GetBytes("RESET KULE");
+
+            udpClient.Send(senddata, senddata.Length);
+
+            udpClient.Close();
+
+            for (int i = 0; i < senddata.Length; i++)
+            {
+                senddata[i] = 0;
+            }
         }
     }
 }

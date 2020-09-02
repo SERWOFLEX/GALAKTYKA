@@ -82,6 +82,14 @@
             this.trackBar_TEMPO = new System.Windows.Forms.TrackBar();
             this.trackBar_VOL_TEXT_NA_MOWE = new System.Windows.Forms.TrackBar();
             this.label11 = new System.Windows.Forms.Label();
+            this.button_PLAY_PODPOWIEDZ = new System.Windows.Forms.Button();
+            this.button_WCZYTAJ = new System.Windows.Forms.Button();
+            this.button_ZAPISZ = new System.Windows.Forms.Button();
+            this.button_DODAJ = new System.Windows.Forms.Button();
+            this.listBox_WIDOK = new System.Windows.Forms.ListBox();
+            this.label_SIEC = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.button_RESET_KULE = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -228,7 +236,6 @@
             // 
             // Panel1
             // 
-            this.Panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Panel1.Controls.Add(this.label5);
             this.Panel1.Controls.Add(this.label7);
@@ -291,7 +298,6 @@
             // 
             // button_START_GRY
             // 
-            this.button_START_GRY.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button_START_GRY.Location = new System.Drawing.Point(13, 391);
             this.button_START_GRY.Name = "button_START_GRY";
             this.button_START_GRY.Size = new System.Drawing.Size(95, 25);
@@ -302,7 +308,6 @@
             // 
             // button_STOP_GRY
             // 
-            this.button_STOP_GRY.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button_STOP_GRY.Location = new System.Drawing.Point(142, 391);
             this.button_STOP_GRY.Name = "button_STOP_GRY";
             this.button_STOP_GRY.Size = new System.Drawing.Size(95, 25);
@@ -313,7 +318,6 @@
             // 
             // button_RESET
             // 
-            this.button_RESET.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button_RESET.Location = new System.Drawing.Point(269, 391);
             this.button_RESET.Name = "button_RESET";
             this.button_RESET.Size = new System.Drawing.Size(95, 25);
@@ -542,7 +546,7 @@
             // 
             // button_PLAY_SPEAK
             // 
-            this.button_PLAY_SPEAK.Location = new System.Drawing.Point(875, 245);
+            this.button_PLAY_SPEAK.Location = new System.Drawing.Point(875, 206);
             this.button_PLAY_SPEAK.Name = "button_PLAY_SPEAK";
             this.button_PLAY_SPEAK.Size = new System.Drawing.Size(75, 23);
             this.button_PLAY_SPEAK.TabIndex = 137;
@@ -554,7 +558,7 @@
             // 
             this.label_TEMPO.AutoSize = true;
             this.label_TEMPO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_TEMPO.Location = new System.Drawing.Point(903, 423);
+            this.label_TEMPO.Location = new System.Drawing.Point(903, 361);
             this.label_TEMPO.Name = "label_TEMPO";
             this.label_TEMPO.Size = new System.Drawing.Size(13, 13);
             this.label_TEMPO.TabIndex = 143;
@@ -565,7 +569,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label12.Location = new System.Drawing.Point(887, 375);
+            this.label12.Location = new System.Drawing.Point(887, 313);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(50, 13);
             this.label12.TabIndex = 142;
@@ -575,7 +579,7 @@
             // 
             this.label_VOL_TEKST_NA_MOWE.AutoSize = true;
             this.label_VOL_TEKST_NA_MOWE.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_VOL_TEKST_NA_MOWE.Location = new System.Drawing.Point(903, 351);
+            this.label_VOL_TEKST_NA_MOWE.Location = new System.Drawing.Point(903, 289);
             this.label_VOL_TEKST_NA_MOWE.Name = "label_VOL_TEKST_NA_MOWE";
             this.label_VOL_TEKST_NA_MOWE.Size = new System.Drawing.Size(13, 13);
             this.label_VOL_TEKST_NA_MOWE.TabIndex = 141;
@@ -586,7 +590,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label15.Location = new System.Drawing.Point(830, 304);
+            this.label15.Location = new System.Drawing.Point(830, 242);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(166, 13);
             this.label15.TabIndex = 140;
@@ -594,7 +598,7 @@
             // 
             // trackBar_TEMPO
             // 
-            this.trackBar_TEMPO.Location = new System.Drawing.Point(855, 391);
+            this.trackBar_TEMPO.Location = new System.Drawing.Point(855, 329);
             this.trackBar_TEMPO.Minimum = -10;
             this.trackBar_TEMPO.Name = "trackBar_TEMPO";
             this.trackBar_TEMPO.Size = new System.Drawing.Size(104, 45);
@@ -604,7 +608,7 @@
             // 
             // trackBar_VOL_TEXT_NA_MOWE
             // 
-            this.trackBar_VOL_TEXT_NA_MOWE.Location = new System.Drawing.Point(751, 320);
+            this.trackBar_VOL_TEXT_NA_MOWE.Location = new System.Drawing.Point(751, 258);
             this.trackBar_VOL_TEXT_NA_MOWE.Maximum = 100;
             this.trackBar_VOL_TEXT_NA_MOWE.Name = "trackBar_VOL_TEXT_NA_MOWE";
             this.trackBar_VOL_TEXT_NA_MOWE.Size = new System.Drawing.Size(314, 45);
@@ -622,13 +626,93 @@
             this.label11.TabIndex = 144;
             this.label11.Text = "TEKST NA MOWĘ";
             // 
+            // button_PLAY_PODPOWIEDZ
+            // 
+            this.button_PLAY_PODPOWIEDZ.Location = new System.Drawing.Point(869, 598);
+            this.button_PLAY_PODPOWIEDZ.Name = "button_PLAY_PODPOWIEDZ";
+            this.button_PLAY_PODPOWIEDZ.Size = new System.Drawing.Size(75, 23);
+            this.button_PLAY_PODPOWIEDZ.TabIndex = 190;
+            this.button_PLAY_PODPOWIEDZ.Text = "PLAY";
+            this.button_PLAY_PODPOWIEDZ.UseVisualStyleBackColor = true;
+            this.button_PLAY_PODPOWIEDZ.Click += new System.EventHandler(this.button_PLAY_PODPOWIEDZ_Click);
+            // 
+            // button_WCZYTAJ
+            // 
+            this.button_WCZYTAJ.Location = new System.Drawing.Point(809, 664);
+            this.button_WCZYTAJ.Name = "button_WCZYTAJ";
+            this.button_WCZYTAJ.Size = new System.Drawing.Size(200, 23);
+            this.button_WCZYTAJ.TabIndex = 189;
+            this.button_WCZYTAJ.Text = "WCZYTAJ LISTĘ";
+            this.button_WCZYTAJ.UseVisualStyleBackColor = true;
+            this.button_WCZYTAJ.Click += new System.EventHandler(this.button_WCZYTAJ_Click);
+            // 
+            // button_ZAPISZ
+            // 
+            this.button_ZAPISZ.Location = new System.Drawing.Point(919, 634);
+            this.button_ZAPISZ.Name = "button_ZAPISZ";
+            this.button_ZAPISZ.Size = new System.Drawing.Size(90, 23);
+            this.button_ZAPISZ.TabIndex = 188;
+            this.button_ZAPISZ.Text = "ZAPISZ";
+            this.button_ZAPISZ.UseVisualStyleBackColor = true;
+            this.button_ZAPISZ.Click += new System.EventHandler(this.button_ZAPISZ_Click);
+            // 
+            // button_DODAJ
+            // 
+            this.button_DODAJ.Location = new System.Drawing.Point(809, 634);
+            this.button_DODAJ.Name = "button_DODAJ";
+            this.button_DODAJ.Size = new System.Drawing.Size(90, 23);
+            this.button_DODAJ.TabIndex = 187;
+            this.button_DODAJ.Text = "DODAJ";
+            this.button_DODAJ.UseVisualStyleBackColor = true;
+            this.button_DODAJ.Click += new System.EventHandler(this.button_DODAJ_Click);
+            // 
+            // listBox_WIDOK
+            // 
+            this.listBox_WIDOK.FormattingEnabled = true;
+            this.listBox_WIDOK.HorizontalScrollbar = true;
+            this.listBox_WIDOK.Location = new System.Drawing.Point(751, 400);
+            this.listBox_WIDOK.Name = "listBox_WIDOK";
+            this.listBox_WIDOK.Size = new System.Drawing.Size(314, 173);
+            this.listBox_WIDOK.TabIndex = 191;
+            // 
+            // label_SIEC
+            // 
+            this.label_SIEC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_SIEC.ForeColor = System.Drawing.Color.Lime;
+            this.label_SIEC.Location = new System.Drawing.Point(16, 634);
+            this.label_SIEC.Name = "label_SIEC";
+            this.label_SIEC.Size = new System.Drawing.Size(439, 44);
+            this.label_SIEC.TabIndex = 200;
+            this.label_SIEC.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // button_RESET_KULE
+            // 
+            this.button_RESET_KULE.Location = new System.Drawing.Point(13, 559);
+            this.button_RESET_KULE.Name = "button_RESET_KULE";
+            this.button_RESET_KULE.Size = new System.Drawing.Size(95, 25);
+            this.button_RESET_KULE.TabIndex = 201;
+            this.button_RESET_KULE.Text = "RESET KULE";
+            this.button_RESET_KULE.UseVisualStyleBackColor = true;
+            this.button_RESET_KULE.Click += new System.EventHandler(this.button_RESET_KULE_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1097, 473);
+            this.ClientSize = new System.Drawing.Size(1097, 699);
             this.ControlBox = false;
+            this.Controls.Add(this.button_RESET_KULE);
+            this.Controls.Add(this.label_SIEC);
+            this.Controls.Add(this.listBox_WIDOK);
+            this.Controls.Add(this.button_PLAY_PODPOWIEDZ);
+            this.Controls.Add(this.button_WCZYTAJ);
+            this.Controls.Add(this.button_ZAPISZ);
+            this.Controls.Add(this.button_DODAJ);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label_TEMPO);
             this.Controls.Add(this.label12);
@@ -705,7 +789,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_ip;
-        private System.Windows.Forms.TextBox textBox_port;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private AxWMPLib.AxWindowsMediaPlayer CZASY_PALYER;
@@ -750,6 +833,15 @@
         private System.Windows.Forms.TrackBar trackBar_TEMPO;
         private System.Windows.Forms.TrackBar trackBar_VOL_TEXT_NA_MOWE;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button_PLAY_PODPOWIEDZ;
+        private System.Windows.Forms.Button button_WCZYTAJ;
+        private System.Windows.Forms.Button button_ZAPISZ;
+        private System.Windows.Forms.Button button_DODAJ;
+        private System.Windows.Forms.ListBox listBox_WIDOK;
+        private System.Windows.Forms.Label label_SIEC;
+        private System.Windows.Forms.Timer timer2;
+        public System.Windows.Forms.TextBox textBox_port;
+        private System.Windows.Forms.Button button_RESET_KULE;
     }
 }
 

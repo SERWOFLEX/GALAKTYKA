@@ -29,5 +29,8 @@
     <Setting Name="MUZYKA_PALAC_SCIEZKA" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="CENTRALNE_IP" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

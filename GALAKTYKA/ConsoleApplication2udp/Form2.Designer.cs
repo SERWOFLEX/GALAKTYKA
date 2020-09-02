@@ -57,6 +57,12 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.button_ZAPIS_CENTR_IP = new System.Windows.Forms.Button();
+            this.textBox_IP_CENTRALNE = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.button_ZAPIS_KOMP_IP = new System.Windows.Forms.Button();
+            this.textBox_KOMP_IP = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -329,11 +335,72 @@
             this.label20.TabIndex = 28;
             this.label20.Text = "label20";
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(416, 68);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(85, 13);
+            this.label21.TabIndex = 40;
+            this.label21.Text = "CENTRALNY IP";
+            // 
+            // button_ZAPIS_CENTR_IP
+            // 
+            this.button_ZAPIS_CENTR_IP.Location = new System.Drawing.Point(684, 63);
+            this.button_ZAPIS_CENTR_IP.Name = "button_ZAPIS_CENTR_IP";
+            this.button_ZAPIS_CENTR_IP.Size = new System.Drawing.Size(75, 23);
+            this.button_ZAPIS_CENTR_IP.TabIndex = 39;
+            this.button_ZAPIS_CENTR_IP.Text = "ZAPISZ";
+            this.button_ZAPIS_CENTR_IP.UseVisualStyleBackColor = true;
+            this.button_ZAPIS_CENTR_IP.Click += new System.EventHandler(this.button_ZAPIS_CENTR_IP_Click);
+            // 
+            // textBox_IP_CENTRALNE
+            // 
+            this.textBox_IP_CENTRALNE.Location = new System.Drawing.Point(524, 65);
+            this.textBox_IP_CENTRALNE.Name = "textBox_IP_CENTRALNE";
+            this.textBox_IP_CENTRALNE.Size = new System.Drawing.Size(118, 20);
+            this.textBox_IP_CENTRALNE.TabIndex = 38;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(416, 305);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(51, 13);
+            this.label22.TabIndex = 43;
+            this.label22.Text = "KOMP IP";
+            this.label22.Visible = false;
+            // 
+            // button_ZAPIS_KOMP_IP
+            // 
+            this.button_ZAPIS_KOMP_IP.Location = new System.Drawing.Point(684, 300);
+            this.button_ZAPIS_KOMP_IP.Name = "button_ZAPIS_KOMP_IP";
+            this.button_ZAPIS_KOMP_IP.Size = new System.Drawing.Size(75, 23);
+            this.button_ZAPIS_KOMP_IP.TabIndex = 42;
+            this.button_ZAPIS_KOMP_IP.Text = "ZAPISZ";
+            this.button_ZAPIS_KOMP_IP.UseVisualStyleBackColor = true;
+            this.button_ZAPIS_KOMP_IP.Visible = false;
+            this.button_ZAPIS_KOMP_IP.Click += new System.EventHandler(this.button_ZAPIS_KOMP_IP_Click);
+            // 
+            // textBox_KOMP_IP
+            // 
+            this.textBox_KOMP_IP.Location = new System.Drawing.Point(524, 302);
+            this.textBox_KOMP_IP.Name = "textBox_KOMP_IP";
+            this.textBox_KOMP_IP.Size = new System.Drawing.Size(118, 20);
+            this.textBox_KOMP_IP.TabIndex = 41;
+            this.textBox_KOMP_IP.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.button_ZAPIS_KOMP_IP);
+            this.Controls.Add(this.textBox_KOMP_IP);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.button_ZAPIS_CENTR_IP);
+            this.Controls.Add(this.textBox_IP_CENTRALNE);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
@@ -403,5 +470,11 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button button_ZAPIS_CENTR_IP;
+        private System.Windows.Forms.TextBox textBox_IP_CENTRALNE;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button button_ZAPIS_KOMP_IP;
+        private System.Windows.Forms.TextBox textBox_KOMP_IP;
     }
 }

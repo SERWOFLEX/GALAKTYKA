@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Threading;
+using System.Net;
+using System.Net.Sockets;
 
 
 
@@ -184,6 +187,17 @@ namespace ConsoleApplication2udp
                 Properties.Settings.Default.MUZYKA_KAPSULA_SCIEZKA = muza_odliczanie;
                 Properties.Settings.Default.Save();
             }
+        }
+
+        private void button_ZAPIS_CENTR_IP_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.CENTRALNE_IP = textBox_IP_CENTRALNE.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void button_ZAPIS_KOMP_IP_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
