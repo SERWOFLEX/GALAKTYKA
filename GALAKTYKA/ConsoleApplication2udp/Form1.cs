@@ -627,5 +627,23 @@ namespace ConsoleApplication2udp
                 senddata[i] = 0;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UdpClient udpClient = new UdpClient();
+            udpClient.Connect(Properties.Settings.Default.CENTRALNE_IP, Convert.ToInt32(textBox_port.Text));
+
+
+            Byte[] senddata = Encoding.ASCII.GetBytes("RESET KARTY");
+
+            udpClient.Send(senddata, senddata.Length);
+
+            udpClient.Close();
+
+            for (int i = 0; i < senddata.Length; i++)
+            {
+                senddata[i] = 0;
+            }
+        }
     }
 }

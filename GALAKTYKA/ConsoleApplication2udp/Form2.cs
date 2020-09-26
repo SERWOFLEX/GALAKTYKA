@@ -43,6 +43,7 @@ namespace ConsoleApplication2udp
             label18.Text = Properties.Settings.Default.MUZYKA_WOJNA_SCIEZKA;
             label19.Text = Properties.Settings.Default.MUZYKA_PALAC_SCIEZKA;
             label20.Text = Properties.Settings.Default.MUZYKA_KAPSULA_SCIEZKA;
+            textBox_IP_CENTRALNE.Text = Properties.Settings.Default.CENTRALNE_IP;
         }
 
         private void button_60_Click(object sender, EventArgs e)

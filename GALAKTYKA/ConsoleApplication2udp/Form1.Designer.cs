@@ -90,6 +90,7 @@
             this.label_SIEC = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.button_RESET_KULE = new System.Windows.Forms.Button();
+            this.button_RESET_KARTY = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -230,7 +231,7 @@
             // dZWIĘKIToolStripMenuItem
             // 
             this.dZWIĘKIToolStripMenuItem.Name = "dZWIĘKIToolStripMenuItem";
-            this.dZWIĘKIToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dZWIĘKIToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.dZWIĘKIToolStripMenuItem.Text = "DŹWIĘKI";
             this.dZWIĘKIToolStripMenuItem.Click += new System.EventHandler(this.dZWIĘKIToolStripMenuItem_Click);
             // 
@@ -691,13 +692,23 @@
             // 
             // button_RESET_KULE
             // 
-            this.button_RESET_KULE.Location = new System.Drawing.Point(13, 559);
+            this.button_RESET_KULE.Location = new System.Drawing.Point(12, 503);
             this.button_RESET_KULE.Name = "button_RESET_KULE";
             this.button_RESET_KULE.Size = new System.Drawing.Size(95, 25);
             this.button_RESET_KULE.TabIndex = 201;
             this.button_RESET_KULE.Text = "RESET KULE";
             this.button_RESET_KULE.UseVisualStyleBackColor = true;
             this.button_RESET_KULE.Click += new System.EventHandler(this.button_RESET_KULE_Click);
+            // 
+            // button_RESET_KARTY
+            // 
+            this.button_RESET_KARTY.Location = new System.Drawing.Point(12, 548);
+            this.button_RESET_KARTY.Name = "button_RESET_KARTY";
+            this.button_RESET_KARTY.Size = new System.Drawing.Size(95, 25);
+            this.button_RESET_KARTY.TabIndex = 202;
+            this.button_RESET_KARTY.Text = "RESET KARTY";
+            this.button_RESET_KARTY.UseVisualStyleBackColor = true;
+            this.button_RESET_KARTY.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -706,6 +717,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1097, 699);
             this.ControlBox = false;
+            this.Controls.Add(this.button_RESET_KARTY);
             this.Controls.Add(this.button_RESET_KULE);
             this.Controls.Add(this.label_SIEC);
             this.Controls.Add(this.listBox_WIDOK);
@@ -842,6 +854,7 @@
         private System.Windows.Forms.Timer timer2;
         public System.Windows.Forms.TextBox textBox_port;
         private System.Windows.Forms.Button button_RESET_KULE;
+        private System.Windows.Forms.Button button_RESET_KARTY;
     }
 }
 
