@@ -15,12 +15,14 @@ const  static  uint8_t dnsip [] = { 192 , 168 , 1 , 1 };
 // gateway ip address
 #endif
 
-#define start_gry 2
+#define start_gry 4
 #define muza_palac 3
 
 #define reset_karty 15
 #define reset_kule 14
 
+byte stan_gry;
+byte play_palac;
 
 Bounce START_GRY = Bounce(); 
 Bounce MUZA_PALAC = Bounce(); 
@@ -143,11 +145,18 @@ myString = String(message);
 //  NetEeprom.readIp(komp);
 //  
 //}
-
+if(myString == "RESET"){
+  stan_gry = 0;
+  play_palac = 0;
+   ether.sendUdp("PRZYCISKI ZRESETOWANE", 21, srcPort, komp, dstPort );
+}
   if(myString == "RESET KARTY"){
   czas_reset_karty = millis();
   digitalWrite(reset_karty,HIGH);
   ether.sendUdp("RESETOWANIE KART", 16, srcPort, komp, dstPort );
+  stan_gry = 0;
+  play_palac = 0;
+  ether.sendUdp("PRZYCISKI ZRESETOWANE", 21, srcPort, komp, dstPort );
   }
 
   if(myString == "RESET KULE"){
@@ -225,24 +234,27 @@ if (!ether.dnsLookup(website))
 }
 
 void loop() {
-//START_GRY.update();
-//MUZA_PALAC.update();
-//
+START_GRY.update();
+MUZA_PALAC.update();
+
 if(millis() > czas_reset_karty + 3000){
   digitalWrite(reset_karty,LOW);
 }
 if(millis() > czas_reset_kule + 3000){
   digitalWrite(reset_kule,LOW);
 }
-
-//if (START_GRY.fell()){
-//  ether.sendUdp("START GRY", 9, srcPort, komp, dstPort );
-//}
-//
-//if (MUZA_PALAC.fell()){
-//  ether.sendUdp("PLAY PALAC", 10, srcPort, komp, dstPort );
-//}
-
+if(stan_gry == 0){
+if (START_GRY.rose()){
+  ether.sendUdp("START GRY", 9, srcPort, komp, dstPort );
+  stan_gry = 1;
+}
+}
+if(play_palac == 0){
+if (MUZA_PALAC.rose()){
+  ether.sendUdp("PLAY PALAC", 10, srcPort, komp, dstPort );
+  play_palac = 1;
+}
+}
   
    ether.packetLoop(ether.packetReceive());
 }
