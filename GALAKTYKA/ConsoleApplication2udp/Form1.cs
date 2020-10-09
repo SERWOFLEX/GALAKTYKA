@@ -244,6 +244,8 @@ namespace ConsoleApplication2udp
             button_PALAC.Text = "PAŁAC";
             button_WOJNA.Text = "WOJNA";
             label_INFO.Text = "";
+            //string version = Application.ProductVersion;
+            //listBox_received.Items.Add(version);
 
             timer1.Stop();
           sekundy = 60;
