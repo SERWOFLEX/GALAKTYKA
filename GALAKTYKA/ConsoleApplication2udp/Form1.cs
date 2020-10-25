@@ -17,6 +17,8 @@ using System.Windows;
 using System.Speech;
 using System.Speech.Synthesis;
 using System.Net.NetworkInformation;
+using System.Threading.Tasks;
+
 
 namespace ConsoleApplication2udp
 {
@@ -87,12 +89,23 @@ namespace ConsoleApplication2udp
             String TEMPO = tempo.ToString();
             label_TEMPO.Text = TEMPO;
 
+            IPAddress[] localIP = Dns.GetHostAddresses(Dns.GetHostName());
+            foreach(IPAddress address in localIP)
+            {
+                if (address.AddressFamily == AddressFamily.InterNetwork)
+                    listBox_received.Items.Add(address.ToString());
+                listBox_received.Items.Add(Dns.GetHostName().ToString());
+            }
+
+
             bool isAvailable = NetworkInterface.GetIsNetworkAvailable();
             if (isAvailable == true)
             {
                 Thread thdUDPServer = new Thread(new ThreadStart(ServerThread));
                 thdUDPServer.Start();
                 timer2.Start();
+                //listBox_received.Items.Add();
+                
             }
             else
             {
