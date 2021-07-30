@@ -18,12 +18,26 @@ using System.Speech;
 using System.Speech.Synthesis;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
+using System.Management;
+using WebSocket4Net;
+using Newtonsoft.Json;
+
+
+
+
+
+
 
 
 namespace ConsoleApplication2udp
 {
     public partial class Form1 : Form
     {
+
+        
+               
+        WebSocket websocket = new WebSocket("ws://192.168.100.164:4444/");
+
         private SpeechSynthesizer _SS = new SpeechSynthesizer();
         public int tempo = -2;
         public int SSvolume = 80;
@@ -31,13 +45,45 @@ namespace ConsoleApplication2udp
         public int minuty = 75;
         public int sekundy = 60;
         public int stan_GRY = 0;
+        public string nazwa = "Urządzenie do przechwytywania wideo";
+        public string nazwa2 = "Obraz 2";
+        public bool costam = true;
 
         public Form1()
         {
+           
+           // websocket.Opened += new EventHandler(websocket_Opened);
+            //websocket.Error += new EventHandler<ErrorEventArgs>(websocket_Error);
+            //websocket.Closed += new EventHandler(websocket_Closed);
+           //websocket.MessageReceived += new EventHandler(websocket_MessageReceived);
+           // websocket.Open();
+
             _SS.Volume = SSvolume;
             _SS.Rate = tempo;
             InitializeComponent();
+            NAudio.CoreAudioApi.MMDeviceEnumerator enumerator = new NAudio.CoreAudioApi.MMDeviceEnumerator();
+            var devices = enumerator.EnumerateAudioEndPoints(NAudio.CoreAudioApi.DataFlow.All, NAudio.CoreAudioApi.DeviceState.Active);
+            //comboBox1.Items.AddRange(devices.ToArray());
         }
+
+       
+
+        public void MySocketClosed(object s, EventArgs e)
+        {
+            //button4.BackColor = Color.Red;
+           // label16.Text = websocket.State.ToString();
+            // MessageBox.Show("Połączenie z OBS jest zamknięte" & vbCrLf & "Sprawdź czy uruchomiono OBS na komputerze docelowym")
+            // Close()
+            // End
+            //CheckForIllegalCrossThreadCalls = true;
+        }
+
+        public void MySocketOpened(object s, EventArgs e)
+        {
+           // label16.Text = websocket.State.ToString();
+           // button4.BackColor = Color.Green;
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -56,13 +102,38 @@ namespace ConsoleApplication2udp
             {
                 senddata[i] = 0;
             }
+            //comboBox1.Items.Clear();
+            //   NAudio.CoreAudioApi.MMDeviceEnumerator enumerator = new NAudio.CoreAudioApi.MMDeviceEnumerator();
+            //   var devices = enumerator.EnumerateAudioEndPoints(NAudio.CoreAudioApi.DataFlow.All, NAudio.CoreAudioApi.DeviceState.Active);
+            //   comboBox1.Items.AddRange(devices.ToArray());
+            // label13.Text = NAudio.CoreAudioApi.DeviceState.Disabled.ToString();
+            //label13.Text = "";
+            //var enumerator = new MMDeviceEnumerator();
+           // foreach (var endpoint in
+            //         enumerator.EnumerateAudioEndPoints(DataFlow.Render, DeviceState.Active))
+            //{
+            //    Console.WriteLine(endpoint.FriendlyName);
+            }
+            //ManagementObjectSearcher mo = new ManagementObjectSearcher("select * from Win32_SoundDevice");
 
+            //foreach (ManagementObject soundDevice in mo.Get())
+            //{
+           //     Console.WriteLine(soundDevice.GetPropertyValue("DeviceId"));
+            //    Console.WriteLine(soundDevice.GetPropertyValue("Manufacturer"));
+                // etc                       
+           // }
 
-        }
+       // }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+
+            foreach (var voice in _SS.GetInstalledVoices())
+            {
+                comboBox_LISTA_JEZYKOW.Items.Add(voice.VoiceInfo.Name);
+            }
+
+            timer4.Start();
             label_INFO.Text = "";
             STATEK_PLAYER.settings.volume = 50;
             trackBar2.Value = STATEK_PLAYER.settings.volume;
@@ -89,13 +160,13 @@ namespace ConsoleApplication2udp
             String TEMPO = tempo.ToString();
             label_TEMPO.Text = TEMPO;
 
-            IPAddress[] localIP = Dns.GetHostAddresses(Dns.GetHostName());
-            foreach(IPAddress address in localIP)
-            {
-                if (address.AddressFamily == AddressFamily.InterNetwork)
-                    listBox_received.Items.Add(address.ToString());
-                listBox_received.Items.Add(Dns.GetHostName().ToString());
-            }
+           // IPAddress[] localIP = Dns.GetHostAddresses(Dns.GetHostName());
+            //foreach(IPAddress address in localIP)
+           // {
+           //     if (address.AddressFamily == AddressFamily.InterNetwork)
+            //        listBox_received.Items.Add(address.ToString());
+            //    listBox_received.Items.Add(Dns.GetHostName().ToString());
+           // }
 
 
             bool isAvailable = NetworkInterface.GetIsNetworkAvailable();
@@ -126,7 +197,7 @@ namespace ConsoleApplication2udp
             {
                 IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, Convert.ToInt32(textBox_port.Text));
                 Byte[] receiveBytes = udpClient.Receive(ref RemoteIpEndPoint);
-                string returnData = Encoding.ASCII.GetString(receiveBytes);
+                string returnData = Encoding.UTF8.GetString(receiveBytes);
                
                 this.Invoke(new MethodInvoker(delegate()
                 {
@@ -164,6 +235,23 @@ namespace ConsoleApplication2udp
                         String vol_muz = STATEK_PLAYER.settings.volume.ToString();
                         label9.Text = vol_muz;
                     }
+                    if (returnData == "Ziobro")
+                    {
+                        UdpClient udpClient1 = new UdpClient();
+                        udpClient1.Connect(Properties.Settings.Default.CENTRALNE_IP, 3000);
+
+
+                        Byte[] senddata = Encoding.ASCII.GetBytes("RESET");
+
+                        udpClient1.Send(senddata, senddata.Length);
+
+                        udpClient1.Close();
+
+                        for (int i = 0; i < senddata.Length; i++)
+                        {
+                            senddata[i] = 0;
+                        }
+                    }
 
                     returnData = "";
                 }));
@@ -194,30 +282,30 @@ namespace ConsoleApplication2udp
                 sekundy = 60;
             }
 
-            if ((min == "60") && (sek == "0"))
-            {
+          //  if ((min == "60") && (sek == "0"))
+           // {
                 
                
-                 CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_15_SCIEZKA;
+              //   CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_15_SCIEZKA;
                 
 
 
-            }
-            if ((min == "45") && (sek == "0"))
-            {
-                CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_30_SCIEZKA;
+          //  }
+          //  if ((min == "45") && (sek == "0"))
+           // {
+            //    CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_30_SCIEZKA;
 
-            }
-            if ((min == "30") && (sek == "0"))
-            {
-                CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_45_SCIEZKA;
+           // }
+           // if ((min == "30") && (sek == "0"))
+           // {
+               // CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_45_SCIEZKA;
 
-            }
-            if ((min == "15") && (sek == "0"))
-            {
-                CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_60_SCIEZKA;
+           // }
+          //  if ((min == "15") && (sek == "0"))
+           // {
+              //  CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_60_SCIEZKA;
 
-            }
+          //  }
             if ((min == "5") && (sek == "0"))
             {
                 CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_5_SCIEZKA;
@@ -504,7 +592,11 @@ namespace ConsoleApplication2udp
 
         private void button_PLAY_SPEAK_Click(object sender, EventArgs e)
         {
-            _SS.SpeakAsync(textBox_SPEAK.Text);
+         
+            
+                _SS.SelectVoice(comboBox_LISTA_JEZYKOW.Text);
+                _SS.SpeakAsync(textBox_SPEAK.Text);
+            
         }
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -659,6 +751,38 @@ namespace ConsoleApplication2udp
             {
                 senddata[i] = 0;
             }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+           // dynamic json = JsonConvert.DeserializeObject(nazwa);
+           // string wysylka = json[nazwa];
+            var version = System.Reflection.Assembly.GetEntryAssembly().GetName().Version;
+            string appVersion = $"{version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
+            // label16.Text = appVersion;
+            
+
+            websocket.Send(@"{""request-type"":""SetSourceRender"",""message-id"":""SetRender"",""render"":true,""source"":""" + nazwa + @""" }");
+            websocket.Send(@"{""request-type"":""SetSourceRender"",""message-id"":""SetRender"",""render"":true,""source"":""" + nazwa2 + @""" }");
+            //websocket.Send("Hello World!");
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            websocket.Open();
+
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            
         }
     }
 }

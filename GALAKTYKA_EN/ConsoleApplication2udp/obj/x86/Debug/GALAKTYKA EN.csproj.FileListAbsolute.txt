@@ -36,3 +36,14 @@ C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\o
 C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.application
 C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.exe
 C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.pdb
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EN.csprojAssemblyReference.cache
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EN.csproj.ResolveComReference.cache
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form1.resources
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form2.resources
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Properties.Resources.resources
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EN.csproj.GenerateResource.cache
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EN.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.exe
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA_EN\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC EN.pdb

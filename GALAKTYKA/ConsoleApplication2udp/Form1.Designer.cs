@@ -91,6 +91,10 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.button_RESET_KULE = new System.Windows.Forms.Button();
             this.button_RESET_KARTY = new System.Windows.Forms.Button();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.comboBox_LISTA_JEZYKOW = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -174,7 +178,7 @@
             this.textBox_ip.Name = "textBox_ip";
             this.textBox_ip.Size = new System.Drawing.Size(192, 20);
             this.textBox_ip.TabIndex = 6;
-            this.textBox_ip.Text = "192.168.100.156";
+            this.textBox_ip.Text = "192.168.100.164";
             this.textBox_ip.Visible = false;
             this.textBox_ip.TextChanged += new System.EventHandler(this.textBox_ip_TextChanged);
             // 
@@ -225,7 +229,7 @@
             this.uSTAWIENIAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dZWIĘKIToolStripMenuItem});
             this.uSTAWIENIAToolStripMenuItem.Name = "uSTAWIENIAToolStripMenuItem";
-            this.uSTAWIENIAToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.uSTAWIENIAToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.uSTAWIENIAToolStripMenuItem.Text = "USTAWIENIA";
             // 
             // dZWIĘKIToolStripMenuItem
@@ -378,6 +382,7 @@
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(291, 45);
             this.trackBar1.TabIndex = 120;
+            this.trackBar1.Visible = false;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // trackBar2
@@ -398,6 +403,7 @@
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 122;
             this.label6.Text = "0";
+            this.label6.Visible = false;
             // 
             // label9
             // 
@@ -419,6 +425,7 @@
             this.label_CZASY.Size = new System.Drawing.Size(47, 13);
             this.label_CZASY.TabIndex = 124;
             this.label_CZASY.Text = "CZASY";
+            this.label_CZASY.Visible = false;
             // 
             // label_STATEK
             // 
@@ -710,13 +717,44 @@
             this.button_RESET_KARTY.UseVisualStyleBackColor = true;
             this.button_RESET_KARTY.Click += new System.EventHandler(this.button3_Click);
             // 
+            // timer3
+            // 
+            this.timer3.Interval = 10;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // timer4
+            // 
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            // 
+            // comboBox_LISTA_JEZYKOW
+            // 
+            this.comboBox_LISTA_JEZYKOW.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_LISTA_JEZYKOW.FormattingEnabled = true;
+            this.comboBox_LISTA_JEZYKOW.Location = new System.Drawing.Point(483, 548);
+            this.comboBox_LISTA_JEZYKOW.Name = "comboBox_LISTA_JEZYKOW";
+            this.comboBox_LISTA_JEZYKOW.Size = new System.Drawing.Size(253, 21);
+            this.comboBox_LISTA_JEZYKOW.TabIndex = 204;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.ForeColor = System.Drawing.Color.Lime;
+            this.label13.Location = new System.Drawing.Point(480, 526);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(143, 13);
+            this.label13.TabIndex = 205;
+            this.label13.Text = "JĘZYJK PODPOWIEDZI";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1097, 699);
+            this.ClientSize = new System.Drawing.Size(1097, 749);
             this.ControlBox = false;
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.comboBox_LISTA_JEZYKOW);
             this.Controls.Add(this.button_RESET_KARTY);
             this.Controls.Add(this.button_RESET_KULE);
             this.Controls.Add(this.label_SIEC);
@@ -855,6 +893,10 @@
         public System.Windows.Forms.TextBox textBox_port;
         private System.Windows.Forms.Button button_RESET_KULE;
         private System.Windows.Forms.Button button_RESET_KARTY;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.ComboBox comboBox_LISTA_JEZYKOW;
+        private System.Windows.Forms.Label label13;
     }
 }
 

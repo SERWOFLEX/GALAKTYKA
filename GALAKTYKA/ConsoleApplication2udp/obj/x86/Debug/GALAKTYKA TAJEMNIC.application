@@ -4,18 +4,17 @@
   <description asmv2:publisher="GALAKTYKA TAJEMNIC" asmv2:product="GALAKTYKA TAJEMNIC" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" co.v1:createDesktopShortcut="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.0" profile="Client" supportedRuntime="4.0.30319" />
-    <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="GALAKTYKA TAJEMNIC.exe.manifest" size="5256">
+    <dependentAssembly dependencyType="install" codebase="GALAKTYKA TAJEMNIC.exe.manifest" size="8042">
       <assemblyIdentity name="GALAKTYKA TAJEMNIC.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>muepvy+kKaIGe4cnZTfySFDG/4s=</dsig:DigestValue>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>E1tGM+VB0MMmH5Jic6oOSVOAikELXwJ0b0EZlh8qXzQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
