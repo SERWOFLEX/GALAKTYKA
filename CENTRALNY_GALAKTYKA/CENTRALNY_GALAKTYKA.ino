@@ -20,6 +20,7 @@ const  static  uint8_t dnsip [] = { 192 , 168 , 1 , 1 };
 
 #define reset_karty 15
 #define reset_kule 14
+#define reset_273 16
 
 byte stan_gry;
 byte play_palac;
@@ -148,21 +149,33 @@ myString = String(message);
 if(myString == "RESET"){
   stan_gry = 0;
   play_palac = 0;
-   ether.sendUdp("PRZYCISKI ZRESETOWANE", 21, srcPort, komp, dstPort );
+   
+   digitalWrite(reset_273,HIGH);
+    delay(2000);
+    digitalWrite(reset_273,LOW);
+ether.sendUdp("PRZYCISKI ZRESETOWANE", 21, srcPort, komp, dstPort );
+    
 }
   if(myString == "RESET KARTY"){
   czas_reset_karty = millis();
   digitalWrite(reset_karty,HIGH);
   ether.sendUdp("RESETOWANIE KART", 16, srcPort, komp, dstPort );
-  stan_gry = 0;
-  play_palac = 0;
-  ether.sendUdp("PRZYCISKI ZRESETOWANE", 21, srcPort, komp, dstPort );
+ // stan_gry = 0;
+ // play_palac = 0;
+//  ether.sendUdp("PRZYCISKI ZRESETOWANE", 21, srcPort, komp, dstPort );
   }
 
   if(myString == "RESET KULE"){
   czas_reset_kule = millis();
   digitalWrite(reset_kule,HIGH);
   ether.sendUdp("RESETOWANIE KULI", 16, srcPort, komp, dstPort );
+  }
+
+  if(myString == "RESET 273"){
+    digitalWrite(reset_273,HIGH);
+    delay(2000);
+    digitalWrite(reset_273,LOW);
+    ether.sendUdp("RESETOWANIE 273", 15, srcPort, komp, dstPort );
   }
   
   
@@ -176,6 +189,7 @@ void setup() {
   pinMode(muza_palac,INPUT);
   pinMode(reset_karty,OUTPUT);
   pinMode(reset_kule,OUTPUT);
+  pinMode(reset_273,OUTPUT);
 
 START_GRY.attach(start_gry);
 MUZA_PALAC.attach(muza_palac);

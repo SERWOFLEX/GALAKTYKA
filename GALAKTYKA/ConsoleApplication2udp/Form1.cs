@@ -784,5 +784,23 @@ namespace ConsoleApplication2udp
         {
             
         }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            UdpClient udpClient = new UdpClient();
+            udpClient.Connect(Properties.Settings.Default.CENTRALNE_IP, Convert.ToInt32(textBox_port.Text));
+
+
+            Byte[] senddata = Encoding.ASCII.GetBytes("RESET 273");
+
+            udpClient.Send(senddata, senddata.Length);
+
+            udpClient.Close();
+
+            for (int i = 0; i < senddata.Length; i++)
+            {
+                senddata[i] = 0;
+            }
+        }
     }
 }

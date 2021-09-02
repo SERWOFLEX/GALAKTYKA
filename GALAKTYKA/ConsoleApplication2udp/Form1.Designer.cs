@@ -95,6 +95,7 @@
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.comboBox_LISTA_JEZYKOW = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.button_RESET_273 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -746,6 +747,16 @@
             this.label13.TabIndex = 205;
             this.label13.Text = "JĘZYJK PODPOWIEDZI";
             // 
+            // button_RESET_273
+            // 
+            this.button_RESET_273.Location = new System.Drawing.Point(12, 597);
+            this.button_RESET_273.Name = "button_RESET_273";
+            this.button_RESET_273.Size = new System.Drawing.Size(95, 25);
+            this.button_RESET_273.TabIndex = 206;
+            this.button_RESET_273.Text = "RESET 273";
+            this.button_RESET_273.UseVisualStyleBackColor = true;
+            this.button_RESET_273.Click += new System.EventHandler(this.button3_Click_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -753,6 +764,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1097, 749);
             this.ControlBox = false;
+            this.Controls.Add(this.button_RESET_273);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.comboBox_LISTA_JEZYKOW);
             this.Controls.Add(this.button_RESET_KARTY);
@@ -897,6 +909,7 @@
         private System.Windows.Forms.Timer timer4;
         private System.Windows.Forms.ComboBox comboBox_LISTA_JEZYKOW;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button_RESET_273;
     }
 }
 
