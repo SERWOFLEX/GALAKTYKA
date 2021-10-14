@@ -116,7 +116,6 @@
             this.textBox_message.Size = new System.Drawing.Size(192, 28);
             this.textBox_message.TabIndex = 0;
             this.textBox_message.Text = "RESET";
-            this.textBox_message.Visible = false;
             this.textBox_message.TextChanged += new System.EventHandler(this.textBox_message_TextChanged);
             // 
             // button_send
@@ -127,7 +126,6 @@
             this.button_send.TabIndex = 1;
             this.button_send.Text = "Send";
             this.button_send.UseVisualStyleBackColor = true;
-            this.button_send.Visible = false;
             this.button_send.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox_received
@@ -147,7 +145,6 @@
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Mesage";
-            this.label1.Visible = false;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -170,7 +167,6 @@
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "IP Destination";
-            this.label3.Visible = false;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox_ip
@@ -180,7 +176,6 @@
             this.textBox_ip.Size = new System.Drawing.Size(192, 20);
             this.textBox_ip.TabIndex = 6;
             this.textBox_ip.Text = "192.168.100.164";
-            this.textBox_ip.Visible = false;
             this.textBox_ip.TextChanged += new System.EventHandler(this.textBox_ip_TextChanged);
             // 
             // textBox_port
@@ -190,7 +185,6 @@
             this.textBox_port.Size = new System.Drawing.Size(192, 20);
             this.textBox_port.TabIndex = 8;
             this.textBox_port.Text = "49955";
-            this.textBox_port.Visible = false;
             this.textBox_port.TextChanged += new System.EventHandler(this.textBox_port_TextChanged);
             // 
             // label4
@@ -202,7 +196,6 @@
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Port";
-            this.label4.Visible = false;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button1
