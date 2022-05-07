@@ -21,12 +21,16 @@ const  static  uint8_t dnsip [] = { 192 , 168 , 1 , 1 };
 #define reset_karty 15
 #define reset_kule 14
 #define reset_273 16
+#define aktywacja_wyjscie 17
+#define sygnal_wyjscie 5
 
 byte stan_gry;
 byte play_palac;
+byte status_wyjscie;
 
 Bounce START_GRY = Bounce(); 
 Bounce MUZA_PALAC = Bounce(); 
+Bounce SYGNAL_WYJSCIE = Bounce(); 
 
 
 String myString = "";
@@ -149,12 +153,17 @@ myString = String(message);
 if(myString == "RESET"){
   stan_gry = 0;
   play_palac = 0;
+  status_wyjscie = 0;
    
    digitalWrite(reset_273,HIGH);
     delay(2000);
     digitalWrite(reset_273,LOW);
 ether.sendUdp("PRZYCISKI ZRESETOWANE", 21, srcPort, komp, dstPort );
-    
+     digitalWrite(aktywacja_wyjscie,LOW);
+     
+     if(digitalRead(sygnal_wyjscie) == LOW){
+       ether.sendUdp("WYJSCIE AKTYWNE", 15, srcPort, komp, dstPort );
+     }
 }
   if(myString == "RESET KARTY"){
   czas_reset_karty = millis();
@@ -177,7 +186,11 @@ ether.sendUdp("PRZYCISKI ZRESETOWANE", 21, srcPort, komp, dstPort );
     digitalWrite(reset_273,LOW);
     ether.sendUdp("RESETOWANIE 273", 15, srcPort, komp, dstPort );
   }
-  
+  if(myString == "AKTYW WYJ"){
+ digitalWrite(aktywacja_wyjscie,HIGH);
+ ether.sendUdp("WYJSCIE AKTYWNE", 17, srcPort, komp, dstPort );
+    
+  }
   
 myString="";
   
@@ -185,17 +198,22 @@ myString="";
 void setup() {
  // NetEeprom.readIp(komp);
   Serial.begin(9600);
-  pinMode(start_gry,INPUT);
-  pinMode(muza_palac,INPUT);
+  pinMode(start_gry,INPUT_PULLUP);
+  pinMode(muza_palac,INPUT_PULLUP);
+  pinMode(sygnal_wyjscie,INPUT_PULLUP);
+  
   pinMode(reset_karty,OUTPUT);
   pinMode(reset_kule,OUTPUT);
   pinMode(reset_273,OUTPUT);
+  pinMode(aktywacja_wyjscie,OUTPUT);
 
 START_GRY.attach(start_gry);
 MUZA_PALAC.attach(muza_palac);
+SYGNAL_WYJSCIE.attach(sygnal_wyjscie);
 
-START_GRY.interval(30);
-MUZA_PALAC.interval(30);
+START_GRY.interval(20);
+MUZA_PALAC.interval(20);
+SYGNAL_WYJSCIE.interval(20);
   
 if (ether.begin(sizeof Ethernet::buffer, mymac, SS) == 0)
     Serial.println(F("Failed to access Ethernet controller"));
@@ -250,6 +268,8 @@ if (!ether.dnsLookup(website))
 void loop() {
 START_GRY.update();
 MUZA_PALAC.update();
+SYGNAL_WYJSCIE.update();
+
 
 if(millis() > czas_reset_karty + 3000){
   digitalWrite(reset_karty,LOW);
@@ -268,6 +288,19 @@ if (MUZA_PALAC.rose()){
   ether.sendUdp("PLAY PALAC", 10, srcPort, komp, dstPort );
   play_palac = 1;
 }
+}
+//if(status_wyjscie == 0){
+if (SYGNAL_WYJSCIE.fell()){
+
+//digitalWrite(aktywacja_wyjscie,HIGH);
+ ether.sendUdp("WYJSCIE AKTYWNE", 15, srcPort, komp, dstPort );
+  //status_wyjscie = 1;
+}
+//}
+if (SYGNAL_WYJSCIE.rose()){
+
+ ether.sendUdp("WYJSCIE NIE AKTYWNE", 19, srcPort, komp, dstPort );
+ 
 }
   
    ether.packetLoop(ether.packetReceive());

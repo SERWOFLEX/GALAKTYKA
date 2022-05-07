@@ -96,6 +96,8 @@
             this.comboBox_LISTA_JEZYKOW = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.button_RESET_273 = new System.Windows.Forms.Button();
+            this.button_AKTYWACJA_WYJSCIE = new System.Windows.Forms.Button();
+            this.button_WERSJA_JEZYKOWA = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -116,6 +118,7 @@
             this.textBox_message.Size = new System.Drawing.Size(192, 28);
             this.textBox_message.TabIndex = 0;
             this.textBox_message.Text = "RESET";
+            this.textBox_message.Visible = false;
             this.textBox_message.TextChanged += new System.EventHandler(this.textBox_message_TextChanged);
             // 
             // button_send
@@ -126,6 +129,7 @@
             this.button_send.TabIndex = 1;
             this.button_send.Text = "Send";
             this.button_send.UseVisualStyleBackColor = true;
+            this.button_send.Visible = false;
             this.button_send.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox_received
@@ -145,6 +149,7 @@
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Mesage";
+            this.label1.Visible = false;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -167,6 +172,7 @@
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "IP Destination";
+            this.label3.Visible = false;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox_ip
@@ -176,6 +182,7 @@
             this.textBox_ip.Size = new System.Drawing.Size(192, 20);
             this.textBox_ip.TabIndex = 6;
             this.textBox_ip.Text = "192.168.100.164";
+            this.textBox_ip.Visible = false;
             this.textBox_ip.TextChanged += new System.EventHandler(this.textBox_ip_TextChanged);
             // 
             // textBox_port
@@ -185,6 +192,7 @@
             this.textBox_port.Size = new System.Drawing.Size(192, 20);
             this.textBox_port.TabIndex = 8;
             this.textBox_port.Text = "49955";
+            this.textBox_port.Visible = false;
             this.textBox_port.TextChanged += new System.EventHandler(this.textBox_port_TextChanged);
             // 
             // label4
@@ -196,6 +204,7 @@
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Port";
+            this.label4.Visible = false;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button1
@@ -681,7 +690,7 @@
             // 
             this.label_SIEC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_SIEC.ForeColor = System.Drawing.Color.Lime;
-            this.label_SIEC.Location = new System.Drawing.Point(16, 634);
+            this.label_SIEC.Location = new System.Drawing.Point(307, 644);
             this.label_SIEC.Name = "label_SIEC";
             this.label_SIEC.Size = new System.Drawing.Size(439, 44);
             this.label_SIEC.TabIndex = 200;
@@ -695,7 +704,7 @@
             // 
             this.button_RESET_KULE.Location = new System.Drawing.Point(12, 503);
             this.button_RESET_KULE.Name = "button_RESET_KULE";
-            this.button_RESET_KULE.Size = new System.Drawing.Size(95, 25);
+            this.button_RESET_KULE.Size = new System.Drawing.Size(135, 25);
             this.button_RESET_KULE.TabIndex = 201;
             this.button_RESET_KULE.Text = "RESET KULE";
             this.button_RESET_KULE.UseVisualStyleBackColor = true;
@@ -705,7 +714,7 @@
             // 
             this.button_RESET_KARTY.Location = new System.Drawing.Point(12, 548);
             this.button_RESET_KARTY.Name = "button_RESET_KARTY";
-            this.button_RESET_KARTY.Size = new System.Drawing.Size(95, 25);
+            this.button_RESET_KARTY.Size = new System.Drawing.Size(135, 25);
             this.button_RESET_KARTY.TabIndex = 202;
             this.button_RESET_KARTY.Text = "RESET KARTY";
             this.button_RESET_KARTY.UseVisualStyleBackColor = true;
@@ -744,11 +753,31 @@
             // 
             this.button_RESET_273.Location = new System.Drawing.Point(12, 597);
             this.button_RESET_273.Name = "button_RESET_273";
-            this.button_RESET_273.Size = new System.Drawing.Size(95, 25);
+            this.button_RESET_273.Size = new System.Drawing.Size(135, 25);
             this.button_RESET_273.TabIndex = 206;
             this.button_RESET_273.Text = "RESET 273";
             this.button_RESET_273.UseVisualStyleBackColor = true;
             this.button_RESET_273.Click += new System.EventHandler(this.button3_Click_2);
+            // 
+            // button_AKTYWACJA_WYJSCIE
+            // 
+            this.button_AKTYWACJA_WYJSCIE.Location = new System.Drawing.Point(12, 643);
+            this.button_AKTYWACJA_WYJSCIE.Name = "button_AKTYWACJA_WYJSCIE";
+            this.button_AKTYWACJA_WYJSCIE.Size = new System.Drawing.Size(135, 25);
+            this.button_AKTYWACJA_WYJSCIE.TabIndex = 207;
+            this.button_AKTYWACJA_WYJSCIE.Text = "AKTYWACJA WYJŚCIE";
+            this.button_AKTYWACJA_WYJSCIE.UseVisualStyleBackColor = true;
+            this.button_AKTYWACJA_WYJSCIE.Click += new System.EventHandler(this.button_AKTYWACJA_WYJSCIE_Click);
+            // 
+            // button_WERSJA_JEZYKOWA
+            // 
+            this.button_WERSJA_JEZYKOWA.Location = new System.Drawing.Point(475, 0);
+            this.button_WERSJA_JEZYKOWA.Name = "button_WERSJA_JEZYKOWA";
+            this.button_WERSJA_JEZYKOWA.Size = new System.Drawing.Size(172, 23);
+            this.button_WERSJA_JEZYKOWA.TabIndex = 208;
+            this.button_WERSJA_JEZYKOWA.Text = "WERSJA POLSKA";
+            this.button_WERSJA_JEZYKOWA.UseVisualStyleBackColor = true;
+            this.button_WERSJA_JEZYKOWA.Click += new System.EventHandler(this.button_WERSJA_JEZYKOWA_Click);
             // 
             // Form1
             // 
@@ -757,6 +786,8 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1097, 749);
             this.ControlBox = false;
+            this.Controls.Add(this.button_WERSJA_JEZYKOWA);
+            this.Controls.Add(this.button_AKTYWACJA_WYJSCIE);
             this.Controls.Add(this.button_RESET_273);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.comboBox_LISTA_JEZYKOW);
@@ -903,6 +934,8 @@
         private System.Windows.Forms.ComboBox comboBox_LISTA_JEZYKOW;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button_RESET_273;
+        private System.Windows.Forms.Button button_AKTYWACJA_WYJSCIE;
+        private System.Windows.Forms.Button button_WERSJA_JEZYKOWA;
     }
 }
 

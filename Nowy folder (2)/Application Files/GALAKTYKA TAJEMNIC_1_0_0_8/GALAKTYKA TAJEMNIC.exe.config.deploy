@@ -7,35 +7,35 @@
     </configSections>
     <userSettings>
         <ConsoleApplication2udp.Properties.Settings>
-            <setting name="DZWIEK_CZAS_60_SCIEZKA" serializeAs="String">
-                <value/>
+            <setting name="DZWIEK_CZAS_5_PL_SCIEZKA" serializeAs="String">
+                <value />
             </setting>
-            <setting name="DZWIEK_CZAS_45_SCIEZKA" serializeAs="String">
-                <value/>
-            </setting>
-            <setting name="DZWIEK_CZAS_30_SCIEZKA" serializeAs="String">
-                <value/>
-            </setting>
-            <setting name="DZWIEK_CZAS_15_SCIEZKA" serializeAs="String">
-                <value/>
-            </setting>
-            <setting name="DZWIEK_CZAS_5_SCIEZKA" serializeAs="String">
-                <value/>
-            </setting>
-            <setting name="MUZYKA_STATEK_SCIEZKA" serializeAs="String">
-                <value/>
+            <setting name="MUZYKA_STATEK_PL_SCIEZKA" serializeAs="String">
+                <value />
             </setting>
             <setting name="MUZYKA_WOJNA_SCIEZKA" serializeAs="String">
-                <value/>
+                <value />
             </setting>
             <setting name="MUZYKA_KAPSULA_SCIEZKA" serializeAs="String">
-                <value/>
+                <value />
             </setting>
             <setting name="MUZYKA_PALAC_SCIEZKA" serializeAs="String">
-                <value/>
+                <value />
             </setting>
             <setting name="CENTRALNE_IP" serializeAs="String">
-                <value/>
+                <value />
+            </setting>
+            <setting name="WYJSCIE_EFEKT_SCIEZKA" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="DZWIEK_CZAS_5_EN_SCIEZKA" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="MUZYKA_STATEK_EN_SCIEZKA" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="WERSJA_JEZYKOWA" serializeAs="String">
+                <value>False</value>
             </setting>
         </ConsoleApplication2udp.Properties.Settings>
     </userSettings>

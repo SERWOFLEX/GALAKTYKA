@@ -48,6 +48,7 @@ namespace ConsoleApplication2udp
         public string nazwa = "Urządzenie do przechwytywania wideo";
         public string nazwa2 = "Obraz 2";
         public bool costam = true;
+        public bool wersja_jezykowa;
 
         public Form1()
         {
@@ -90,11 +91,12 @@ namespace ConsoleApplication2udp
            
             UdpClient udpClient = new UdpClient();
             udpClient.Connect(textBox_ip.Text, Convert.ToInt32(textBox_port.Text));
-         
 
-                Byte[] senddata = Encoding.ASCII.GetBytes(textBox_message.Text);
 
-                udpClient.Send(senddata, senddata.Length);
+             Byte[] senddata = Encoding.ASCII.GetBytes(textBox_message.Text);
+            //Byte[] senddata = Encoding.UTF8.GetBytes("1".ToArray());
+
+            udpClient.Send(senddata, senddata.Length);
 
                 udpClient.Close();
             
@@ -127,6 +129,17 @@ namespace ConsoleApplication2udp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            wersja_jezykowa = Properties.Settings.Default.WERSJA_JEZYKOWA;
+
+
+            if (Properties.Settings.Default.WERSJA_JEZYKOWA == false)
+            {
+                button_WERSJA_JEZYKOWA.Text = "WERSJA POLSKA";
+            }
+            if (Properties.Settings.Default.WERSJA_JEZYKOWA == true)
+            {
+                button_WERSJA_JEZYKOWA.Text = "WERSJA ANGIELSKA";
+            }
 
             foreach (var voice in _SS.GetInstalledVoices())
             {
@@ -211,8 +224,16 @@ namespace ConsoleApplication2udp
                     {
                         if (stan_GRY == 0) { 
                         minuty = 74;
-                        STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_SCIEZKA;
-                        timer1.Start();
+                            if(wersja_jezykowa == false)
+                            {
+                                STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_PL_SCIEZKA;
+                            }
+                            if (wersja_jezykowa == true)
+                            {
+                                STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_EN_SCIEZKA;
+                            }
+
+                            timer1.Start();
                             stan_GRY = 1;
                         }   
 
@@ -235,23 +256,19 @@ namespace ConsoleApplication2udp
                         String vol_muz = STATEK_PLAYER.settings.volume.ToString();
                         label9.Text = vol_muz;
                     }
-                    if (returnData == "Ziobro")
+                    if (returnData == "WYJSCIE AKTYWNE")
                     {
-                        UdpClient udpClient1 = new UdpClient();
-                        udpClient1.Connect(Properties.Settings.Default.CENTRALNE_IP, 3000);
+                        button_AKTYWACJA_WYJSCIE.BackColor = Color.Green;
+                        WOJNA_PLAYER.URL = Properties.Settings.Default.WYJSCIE_EFEKT_SCIEZKA;
 
-
-                        Byte[] senddata = Encoding.ASCII.GetBytes("RESET");
-
-                        udpClient1.Send(senddata, senddata.Length);
-
-                        udpClient1.Close();
-
-                        for (int i = 0; i < senddata.Length; i++)
-                        {
-                            senddata[i] = 0;
-                        }
                     }
+                    if (returnData == "WYJSCIE NIE AKTYWNE")
+                    {
+                        button_AKTYWACJA_WYJSCIE.BackColor = DefaultBackColor;
+                       
+
+                    }
+
 
                     returnData = "";
                 }));
@@ -260,7 +277,10 @@ namespace ConsoleApplication2udp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            foreach(var process in Process.GetProcessesByName("GALAKTYKA TAJEMNIC"))
+
+            Properties.Settings.Default.WERSJA_JEZYKOWA = wersja_jezykowa;
+            Properties.Settings.Default.Save();
+            foreach (var process in Process.GetProcessesByName("GALAKTYKA TAJEMNIC"))
             {
                 process.Kill();
             }
@@ -308,8 +328,14 @@ namespace ConsoleApplication2udp
           //  }
             if ((min == "5") && (sek == "0"))
             {
-                CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_5_SCIEZKA;
-
+                if (wersja_jezykowa == false)
+                {
+                    CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_5_PL_SCIEZKA;
+                }
+                if (wersja_jezykowa == true)
+                {
+                    CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_5_EN_SCIEZKA;
+                }
             }
         }
 
@@ -319,7 +345,16 @@ namespace ConsoleApplication2udp
             sekundy = 60;
             timer1.Start();
             stan_GRY = 1;
-            STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_SCIEZKA;
+            if (wersja_jezykowa == false)
+            {
+                STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_PL_SCIEZKA;
+            }
+            if (wersja_jezykowa == true)
+            {
+                STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_EN_SCIEZKA;
+            }
+
+
         }
 
         private void button_STOP_GRY_Click(object sender, EventArgs e)
@@ -345,6 +380,8 @@ namespace ConsoleApplication2udp
             button_PALAC.Text = "PAŁAC";
             button_WOJNA.Text = "WOJNA";
             label_INFO.Text = "";
+            button_AKTYWACJA_WYJSCIE.BackColor = DefaultBackColor;
+
             //string version = Application.ProductVersion;
             //listBox_received.Items.Add(version);
 
@@ -387,7 +424,16 @@ namespace ConsoleApplication2udp
             if (button_STATEK.Text == "STATEK")
             {
                 button_STATEK.Text = "STATEK STOP";
-                STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_SCIEZKA;
+                if (wersja_jezykowa == false)
+                {
+                    STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_PL_SCIEZKA;
+                }
+                if (wersja_jezykowa == true)
+                {
+                    STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_EN_SCIEZKA;
+                }
+
+
             }
            else if (button_STATEK.Text == "STATEK STOP")
             {
@@ -474,7 +520,7 @@ namespace ConsoleApplication2udp
         {
             if (STATEK_PLAYER.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
-                if (STATEK_PLAYER.URL == Properties.Settings.Default.MUZYKA_STATEK_SCIEZKA)
+                if ((STATEK_PLAYER.URL == Properties.Settings.Default.MUZYKA_STATEK_PL_SCIEZKA) || (STATEK_PLAYER.URL == Properties.Settings.Default.MUZYKA_STATEK_EN_SCIEZKA))
                 {
                     button_STATEK.BackColor = Color.Green;
                     label_STATEK.ForeColor = Color.Lime;
@@ -592,11 +638,11 @@ namespace ConsoleApplication2udp
 
         private void button_PLAY_SPEAK_Click(object sender, EventArgs e)
         {
-         
-            
-                _SS.SelectVoice(comboBox_LISTA_JEZYKOW.Text);
-                _SS.SpeakAsync(textBox_SPEAK.Text);
-            
+            if (comboBox_LISTA_JEZYKOW.Text != "") { 
+
+            _SS.SelectVoice(comboBox_LISTA_JEZYKOW.Text);
+            _SS.SpeakAsync(textBox_SPEAK.Text);
+            }   
         }
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -800,6 +846,44 @@ namespace ConsoleApplication2udp
             for (int i = 0; i < senddata.Length; i++)
             {
                 senddata[i] = 0;
+            }
+        }
+
+        private void button_AKTYWACJA_WYJSCIE_Click(object sender, EventArgs e)
+        {
+            
+            UdpClient udpClient = new UdpClient();
+            udpClient.Connect(Properties.Settings.Default.CENTRALNE_IP, Convert.ToInt32(textBox_port.Text));
+
+            WOJNA_PLAYER.URL = Properties.Settings.Default.WYJSCIE_EFEKT_SCIEZKA;
+
+            Byte[] senddata = Encoding.ASCII.GetBytes("AKTYW WYJ");
+
+            udpClient.Send(senddata, senddata.Length);
+
+            udpClient.Close();
+
+            for (int i = 0; i < senddata.Length; i++)
+            {
+                senddata[i] = 0;
+            }
+        }
+
+        private void button_WERSJA_JEZYKOWA_Click(object sender, EventArgs e)
+        {
+            if(wersja_jezykowa == false)
+            {
+                button_WERSJA_JEZYKOWA.Text = "WERSJA ANGIELSKA";
+                wersja_jezykowa = true;
+                Properties.Settings.Default.WERSJA_JEZYKOWA = true;
+                Properties.Settings.Default.Save();
+            }
+            else if (wersja_jezykowa == true)
+            {
+                button_WERSJA_JEZYKOWA.Text = "WERSJA POLSKA";
+                wersja_jezykowa = false;
+                Properties.Settings.Default.WERSJA_JEZYKOWA = false;
+                Properties.Settings.Default.Save();
             }
         }
     }

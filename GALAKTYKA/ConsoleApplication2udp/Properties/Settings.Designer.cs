@@ -12,7 +12,7 @@ namespace ConsoleApplication2udp.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,72 +26,24 @@ namespace ConsoleApplication2udp.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DZWIEK_CZAS_60_SCIEZKA {
+        public string DZWIEK_CZAS_5_PL_SCIEZKA {
             get {
-                return ((string)(this["DZWIEK_CZAS_60_SCIEZKA"]));
+                return ((string)(this["DZWIEK_CZAS_5_PL_SCIEZKA"]));
             }
             set {
-                this["DZWIEK_CZAS_60_SCIEZKA"] = value;
+                this["DZWIEK_CZAS_5_PL_SCIEZKA"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DZWIEK_CZAS_45_SCIEZKA {
+        public string MUZYKA_STATEK_PL_SCIEZKA {
             get {
-                return ((string)(this["DZWIEK_CZAS_45_SCIEZKA"]));
+                return ((string)(this["MUZYKA_STATEK_PL_SCIEZKA"]));
             }
             set {
-                this["DZWIEK_CZAS_45_SCIEZKA"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DZWIEK_CZAS_30_SCIEZKA {
-            get {
-                return ((string)(this["DZWIEK_CZAS_30_SCIEZKA"]));
-            }
-            set {
-                this["DZWIEK_CZAS_30_SCIEZKA"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DZWIEK_CZAS_15_SCIEZKA {
-            get {
-                return ((string)(this["DZWIEK_CZAS_15_SCIEZKA"]));
-            }
-            set {
-                this["DZWIEK_CZAS_15_SCIEZKA"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DZWIEK_CZAS_5_SCIEZKA {
-            get {
-                return ((string)(this["DZWIEK_CZAS_5_SCIEZKA"]));
-            }
-            set {
-                this["DZWIEK_CZAS_5_SCIEZKA"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string MUZYKA_STATEK_SCIEZKA {
-            get {
-                return ((string)(this["MUZYKA_STATEK_SCIEZKA"]));
-            }
-            set {
-                this["MUZYKA_STATEK_SCIEZKA"] = value;
+                this["MUZYKA_STATEK_PL_SCIEZKA"] = value;
             }
         }
         
@@ -140,6 +92,54 @@ namespace ConsoleApplication2udp.Properties {
             }
             set {
                 this["CENTRALNE_IP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string WYJSCIE_EFEKT_SCIEZKA {
+            get {
+                return ((string)(this["WYJSCIE_EFEKT_SCIEZKA"]));
+            }
+            set {
+                this["WYJSCIE_EFEKT_SCIEZKA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DZWIEK_CZAS_5_EN_SCIEZKA {
+            get {
+                return ((string)(this["DZWIEK_CZAS_5_EN_SCIEZKA"]));
+            }
+            set {
+                this["DZWIEK_CZAS_5_EN_SCIEZKA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MUZYKA_STATEK_EN_SCIEZKA {
+            get {
+                return ((string)(this["MUZYKA_STATEK_EN_SCIEZKA"]));
+            }
+            set {
+                this["MUZYKA_STATEK_EN_SCIEZKA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool WERSJA_JEZYKOWA {
+            get {
+                return ((bool)(this["WERSJA_JEZYKOWA"]));
+            }
+            set {
+                this["WERSJA_JEZYKOWA"] = value;
             }
         }
     }

@@ -18,15 +18,15 @@ namespace ConsoleApplication2udp
 
     public partial class Form2 : Form
     {
-        public string minut60;
-        public string minut45;
-        public string minut30;
-        public string minut15;
-        public string minut5;
-        public string muza_statek;
+        
+        public string minut5_EN;
+        public string minut5_PL;
+        public string muza_statek_PL;
+        public string muza_statek_EN;
         public string muza_winda;
         public string muza_odliczanie;
         public string muza_palac;
+        public string wyjscie_efekt;
 
         public Form2()
         {
@@ -34,35 +34,42 @@ namespace ConsoleApplication2udp
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            label7.Text = Properties.Settings.Default.DZWIEK_CZAS_60_SCIEZKA;
-            label8.Text = Properties.Settings.Default.DZWIEK_CZAS_45_SCIEZKA;
-            label9.Text = Properties.Settings.Default.DZWIEK_CZAS_30_SCIEZKA;
-            label10.Text = Properties.Settings.Default.DZWIEK_CZAS_15_SCIEZKA;
-            label11.Text = Properties.Settings.Default.DZWIEK_CZAS_5_SCIEZKA;
-            label17.Text = Properties.Settings.Default.MUZYKA_STATEK_SCIEZKA;
+            
+            label11.Text = Properties.Settings.Default.DZWIEK_CZAS_5_PL_SCIEZKA;
+            label17.Text = Properties.Settings.Default.MUZYKA_STATEK_PL_SCIEZKA;
             label18.Text = Properties.Settings.Default.MUZYKA_WOJNA_SCIEZKA;
             label19.Text = Properties.Settings.Default.MUZYKA_PALAC_SCIEZKA;
             label20.Text = Properties.Settings.Default.MUZYKA_KAPSULA_SCIEZKA;
             textBox_IP_CENTRALNE.Text = Properties.Settings.Default.CENTRALNE_IP;
+            label23.Text = Properties.Settings.Default.WYJSCIE_EFEKT_SCIEZKA;
+            label28.Text = Properties.Settings.Default.DZWIEK_CZAS_5_EN_SCIEZKA;
+            label26.Text = Properties.Settings.Default.MUZYKA_STATEK_EN_SCIEZKA;
+
         }
 
-        private void button_60_Click(object sender, EventArgs e)
+       
+        
+        
+
+        private void button_CZAS_5_PL_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
             // dlg.ShowDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                
-                minut60 = dlg.FileName;
-                label7.Text = minut60;
+
+                minut5_PL = dlg.FileName;
+                label11.Text = minut5_PL;
                 //MessageBox.Show(fileName);
-                Properties.Settings.Default.DZWIEK_CZAS_60_SCIEZKA = minut60;
+                Properties.Settings.Default.DZWIEK_CZAS_5_PL_SCIEZKA = minut5_PL;
                 Properties.Settings.Default.Save();
             }
         }
         
-        private void button_45_Click(object sender, EventArgs e)
+
+
+        private void button_STATEK_PL_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
@@ -70,74 +77,10 @@ namespace ConsoleApplication2udp
             if (dlg.ShowDialog() == DialogResult.OK)
             {
 
-                minut45 = dlg.FileName;
-                label8.Text = minut45;
+                muza_statek_PL = dlg.FileName;
+                label17.Text = muza_statek_PL;
                 //MessageBox.Show(fileName);
-                Properties.Settings.Default.DZWIEK_CZAS_45_SCIEZKA = minut45;
-                Properties.Settings.Default.Save();
-            }
-        }
-
-        private void button_30_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
-            // dlg.ShowDialog();
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-
-                minut30 = dlg.FileName;
-                label9.Text = minut30;
-                //MessageBox.Show(fileName);
-                Properties.Settings.Default.DZWIEK_CZAS_30_SCIEZKA = minut30;
-                Properties.Settings.Default.Save();
-            }
-        }
-
-        private void button_15_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*"; ;
-            // dlg.ShowDialog();
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-
-                minut15 = dlg.FileName;
-                label10.Text = minut15;
-                //MessageBox.Show(fileName);
-                Properties.Settings.Default.DZWIEK_CZAS_15_SCIEZKA = minut15;
-                Properties.Settings.Default.Save();
-            }
-        }
-
-        private void button_5_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
-            // dlg.ShowDialog();
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-
-                minut5 = dlg.FileName;
-                label11.Text = minut5;
-                //MessageBox.Show(fileName);
-                Properties.Settings.Default.DZWIEK_CZAS_5_SCIEZKA = minut5;
-                Properties.Settings.Default.Save();
-            }
-        }
-
-        private void button_STATEK_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
-            // dlg.ShowDialog();
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-
-                muza_statek = dlg.FileName;
-                label17.Text = muza_statek;
-                //MessageBox.Show(fileName);
-                Properties.Settings.Default.MUZYKA_STATEK_SCIEZKA = muza_statek;
+                Properties.Settings.Default.MUZYKA_STATEK_PL_SCIEZKA = muza_statek_PL;
                 Properties.Settings.Default.Save();
             }
         }
@@ -199,6 +142,54 @@ namespace ConsoleApplication2udp
         private void button_ZAPIS_KOMP_IP_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void button_WYJSCIE_EFEKT_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
+            // dlg.ShowDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+
+                wyjscie_efekt = dlg.FileName;
+                label23.Text = wyjscie_efekt;
+                //MessageBox.Show(fileName);
+                Properties.Settings.Default.WYJSCIE_EFEKT_SCIEZKA = wyjscie_efekt;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void button_CZAS_5_EN_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
+            // dlg.ShowDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+
+                minut5_EN = dlg.FileName;
+                label28.Text = minut5_EN;
+                //MessageBox.Show(fileName);
+                Properties.Settings.Default.DZWIEK_CZAS_5_EN_SCIEZKA = minut5_EN;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void button_STATEK_EN_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
+            // dlg.ShowDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+
+                muza_statek_EN = dlg.FileName;
+                label26.Text = muza_statek_EN;
+                //MessageBox.Show(fileName);
+                Properties.Settings.Default.MUZYKA_STATEK_EN_SCIEZKA = muza_statek_EN;
+                Properties.Settings.Default.Save();
+            }
         }
     }
 }
