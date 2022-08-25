@@ -326,7 +326,7 @@ namespace ConsoleApplication2udp
               //  CZASY_PALYER.URL = Properties.Settings.Default.DZWIEK_CZAS_60_SCIEZKA;
 
           //  }
-            if ((min == "5") && (sek == "0"))
+            if ((min == "10") && (sek == "0"))
             {
                 if (wersja_jezykowa == false)
                 {
