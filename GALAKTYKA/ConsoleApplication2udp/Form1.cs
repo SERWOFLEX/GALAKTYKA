@@ -129,17 +129,10 @@ namespace ConsoleApplication2udp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            wersja_jezykowa = Properties.Settings.Default.WERSJA_JEZYKOWA;
+            wersja_jezykowa = false;
 
 
-            if (Properties.Settings.Default.WERSJA_JEZYKOWA == false)
-            {
-                button_WERSJA_JEZYKOWA.Text = "WERSJA POLSKA";
-            }
-            if (Properties.Settings.Default.WERSJA_JEZYKOWA == true)
-            {
-                button_WERSJA_JEZYKOWA.Text = "WERSJA ANGIELSKA";
-            }
+            
 
             foreach (var voice in _SS.GetInstalledVoices())
             {
@@ -199,6 +192,14 @@ namespace ConsoleApplication2udp
 
             //Thread thdUDPServer = new Thread(new ThreadStart(serverThread));
             //thdUDPServer.Start();
+            if (Properties.Settings.Default.WERSJA_JEZYKOWA == false)
+            {
+                button_WERSJA_JEZYKOWA.Text = "WERSJA POLSKA";
+            }
+            if (Properties.Settings.Default.WERSJA_JEZYKOWA == true)
+            {
+                button_WERSJA_JEZYKOWA.Text = "WERSJA ANGIELSKA";
+            }
         }
 
         public void ServerThread()
@@ -266,6 +267,41 @@ namespace ConsoleApplication2udp
                     {
                         button_AKTYWACJA_WYJSCIE.BackColor = DefaultBackColor;
                        
+
+                    }
+                    if (returnData == "ZWORA KAPSULA ON")
+                    {
+                        button_ZWORA_KAPSULA.BackColor = Color.Green;
+
+
+                    }
+                    if ((returnData == "START EKRANY")||(returnData == "RESET EKRANY"))
+                    {
+                        button_STATUS_EKRANY.BackColor = Color.Green;
+                    }
+                    if ((returnData == "CENTRALNY ZALOGOWANY") || (returnData == "PRZYCISKI ZRESETOWANE"))
+                    {
+                        button_STATUS_CENTRALNY.BackColor = Color.Green;
+                    }
+                    if ((returnData == "TABLET REBEL START") || (returnData == "RESET TABLET"))
+                    {
+                        button_STATUS_TABLET.BackColor = Color.Green;
+                    }
+                    if (returnData == "START STATKU")
+                    {
+                        button_START_STATKU.BackColor = Color.Green;
+                       
+                    }
+                    if (returnData == "START KOSMOS")
+                    {
+                        button_START_KOSMOS.BackColor = Color.Green;
+                        button_START_STATKU.BackColor = DefaultBackColor;
+
+                    }
+                    if (returnData == "START WOJNA")
+                    {
+                        button_START_KOSMOS.BackColor = DefaultBackColor;
+                        button_START_WOJNA.BackColor = Color.Green;
 
                     }
 
@@ -348,10 +384,41 @@ namespace ConsoleApplication2udp
             if (wersja_jezykowa == false)
             {
                 STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_PL_SCIEZKA;
+                UdpClient udpClient = new UdpClient();
+                udpClient.Connect(Properties.Settings.Default.EKRANY_IP, Convert.ToInt32(textBox_port.Text));
+
+
+                Byte[] senddata = Encoding.ASCII.GetBytes("START GRY PL");
+
+                udpClient.Send(senddata, senddata.Length);
+
+                udpClient.Close();
+
+                for (int i = 0; i < senddata.Length; i++)
+                {
+                    senddata[i] = 0;
+                }
+
+
             }
             if (wersja_jezykowa == true)
             {
                 STATEK_PLAYER.URL = Properties.Settings.Default.MUZYKA_STATEK_EN_SCIEZKA;
+                
+                UdpClient udpClient = new UdpClient();
+                udpClient.Connect(Properties.Settings.Default.EKRANY_IP, Convert.ToInt32(textBox_port.Text));
+
+
+                Byte[] senddata = Encoding.ASCII.GetBytes("START GRY EN");
+
+                udpClient.Send(senddata, senddata.Length);
+
+                udpClient.Close();
+
+                for (int i = 0; i < senddata.Length; i++)
+                {
+                    senddata[i] = 0;
+                }
             }
 
 
@@ -381,6 +448,13 @@ namespace ConsoleApplication2udp
             button_WOJNA.Text = "WOJNA";
             label_INFO.Text = "";
             button_AKTYWACJA_WYJSCIE.BackColor = DefaultBackColor;
+            button_ZWORA_KAPSULA.BackColor = DefaultBackColor;
+            button_STATUS_CENTRALNY.BackColor = DefaultBackColor;
+            button_STATUS_EKRANY.BackColor = DefaultBackColor;
+            button_STATUS_TABLET.BackColor = DefaultBackColor;
+            button_START_STATKU.BackColor = DefaultBackColor;
+            button_START_KOSMOS.BackColor = DefaultBackColor;
+            button_START_WOJNA.BackColor = DefaultBackColor;
 
             //string version = Application.ProductVersion;
             //listBox_received.Items.Add(version);
@@ -397,6 +471,11 @@ namespace ConsoleApplication2udp
             Byte[] senddata = Encoding.ASCII.GetBytes("RESET");
 
             udpClient.Send(senddata, senddata.Length);
+            udpClient.Connect(Properties.Settings.Default.TABLET_IP, Convert.ToInt32(textBox_port.Text));
+            udpClient.Send(senddata, senddata.Length);
+            udpClient.Connect(Properties.Settings.Default.EKRANY_IP, Convert.ToInt32(textBox_port.Text));
+            udpClient.Send(senddata, senddata.Length);
+
 
             udpClient.Close();
 
@@ -449,12 +528,28 @@ namespace ConsoleApplication2udp
             {
                 WOJNA_PLAYER.URL = Properties.Settings.Default.MUZYKA_WOJNA_SCIEZKA;
                 button_WOJNA.Text = "WOJNA STOP";
+                UdpClient udpClient = new UdpClient();
+                udpClient.Connect(Properties.Settings.Default.EKRANY_IP, Convert.ToInt32(textBox_port.Text));
+
+
+                Byte[] senddata = Encoding.ASCII.GetBytes("WOJNA");
+
+                udpClient.Send(senddata, senddata.Length);
+
+                udpClient.Close();
+
+                for (int i = 0; i < senddata.Length; i++)
+                {
+                    senddata[i] = 0;
+                }
             }
             else if (button_WOJNA.Text == "WOJNA STOP")
             {
                 WOJNA_PLAYER.Ctlcontrols.stop();
                 button_WOJNA.Text = "WOJNA";
             }
+
+
         }
 
         private void button_KAPSULA_Click(object sender, EventArgs e)
@@ -875,16 +970,116 @@ namespace ConsoleApplication2udp
             {
                 button_WERSJA_JEZYKOWA.Text = "WERSJA ANGIELSKA";
                 wersja_jezykowa = true;
-                Properties.Settings.Default.WERSJA_JEZYKOWA = true;
-                Properties.Settings.Default.Save();
+                //Properties.Settings.Default.WERSJA_JEZYKOWA = true;
+                //Properties.Settings.Default.Save();
             }
             else if (wersja_jezykowa == true)
             {
                 button_WERSJA_JEZYKOWA.Text = "WERSJA POLSKA";
                 wersja_jezykowa = false;
-                Properties.Settings.Default.WERSJA_JEZYKOWA = false;
-                Properties.Settings.Default.Save();
+               // Properties.Settings.Default.WERSJA_JEZYKOWA = false;
+                //Properties.Settings.Default.Save();
             }
+        }
+
+        private void button_ZWORA_KAPSULA_Click(object sender, EventArgs e)
+        {
+            UdpClient udpClient = new UdpClient();
+            udpClient.Connect(Properties.Settings.Default.CENTRALNE_IP, Convert.ToInt32(textBox_port.Text));
+
+
+            Byte[] senddata = Encoding.ASCII.GetBytes("ZW KAPS ON");
+
+            udpClient.Send(senddata, senddata.Length);
+
+            udpClient.Close();
+
+            for (int i = 0; i < senddata.Length; i++)
+            {
+                senddata[i] = 0;
+            }
+        }
+
+        private void button_START_STATKU_Click(object sender, EventArgs e)
+        {
+            UdpClient udpClient = new UdpClient();
+            udpClient.Connect(Properties.Settings.Default.EKRANY_IP, Convert.ToInt32(textBox_port.Text));
+
+
+            Byte[] senddata = Encoding.ASCII.GetBytes("START");
+
+            udpClient.Send(senddata, senddata.Length);
+
+            udpClient.Close();
+
+            for (int i = 0; i < senddata.Length; i++)
+            {
+                senddata[i] = 0;
+            }
+        }
+
+        private void button_START_KOSMOS_Click(object sender, EventArgs e)
+        {
+            UdpClient udpClient = new UdpClient();
+            udpClient.Connect(Properties.Settings.Default.EKRANY_IP, Convert.ToInt32(textBox_port.Text));
+
+
+            Byte[] senddata = Encoding.ASCII.GetBytes("KOSMOS");
+
+            udpClient.Send(senddata, senddata.Length);
+
+            udpClient.Close();
+
+            for (int i = 0; i < senddata.Length; i++)
+            {
+                senddata[i] = 0;
+            }
+        }
+
+        private void button_START_WOJNA_Click(object sender, EventArgs e)
+        {
+            UdpClient udpClient = new UdpClient();
+            udpClient.Connect(Properties.Settings.Default.EKRANY_IP, Convert.ToInt32(textBox_port.Text));
+
+
+            Byte[] senddata = Encoding.ASCII.GetBytes("WOJNA");
+
+            udpClient.Send(senddata, senddata.Length);
+
+            udpClient.Close();
+
+            for (int i = 0; i < senddata.Length; i++)
+            {
+                senddata[i] = 0;
+            }
+        }
+
+        private void button_KOMP_EKRANY_DOWN_Click(object sender, EventArgs e)
+        {
+            DialogResult d;
+            d = MessageBox.Show(("CZY NA PEWNO ZAMKNĄĆ KOMPUTER EKRANY"), "POTWIERDZENIE ZAMKNIĘCIA KOMPUTERA EKRANY", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (d == DialogResult.Yes)
+            {
+
+
+                UdpClient udpClient = new UdpClient();
+                udpClient.Connect(Properties.Settings.Default.EKRANY_IP, Convert.ToInt32(textBox_port.Text));
+
+
+                Byte[] senddata = Encoding.ASCII.GetBytes("DOWN");
+
+                udpClient.Send(senddata, senddata.Length);
+
+                udpClient.Close();
+
+                for (int i = 0; i < senddata.Length; i++)
+                {
+                    senddata[i] = 0;
+                }
+
+            }
+
+
         }
     }
 }

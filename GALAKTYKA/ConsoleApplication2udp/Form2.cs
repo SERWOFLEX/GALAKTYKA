@@ -41,6 +41,8 @@ namespace ConsoleApplication2udp
             label19.Text = Properties.Settings.Default.MUZYKA_PALAC_SCIEZKA;
             label20.Text = Properties.Settings.Default.MUZYKA_KAPSULA_SCIEZKA;
             textBox_IP_CENTRALNE.Text = Properties.Settings.Default.CENTRALNE_IP;
+            textBox_IP_TABLET.Text = Properties.Settings.Default.TABLET_IP;
+            textBox_KOMP_EKRANY_IP.Text = Properties.Settings.Default.EKRANY_IP;
             label23.Text = Properties.Settings.Default.WYJSCIE_EFEKT_SCIEZKA;
             label28.Text = Properties.Settings.Default.DZWIEK_CZAS_5_EN_SCIEZKA;
             label26.Text = Properties.Settings.Default.MUZYKA_STATEK_EN_SCIEZKA;
@@ -190,6 +192,18 @@ namespace ConsoleApplication2udp
                 Properties.Settings.Default.MUZYKA_STATEK_EN_SCIEZKA = muza_statek_EN;
                 Properties.Settings.Default.Save();
             }
+        }
+
+        private void button_ZAPIS_TABLET_IP_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.TABLET_IP = textBox_IP_TABLET.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void button_ZAPISZ_EKRANY_IP_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.EKRANY_IP = textBox_KOMP_EKRANY_IP.Text;
+            Properties.Settings.Default.Save();
         }
     }
 }

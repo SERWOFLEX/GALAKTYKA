@@ -142,5 +142,29 @@ namespace ConsoleApplication2udp.Properties {
                 this["WERSJA_JEZYKOWA"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TABLET_IP {
+            get {
+                return ((string)(this["TABLET_IP"]));
+            }
+            set {
+                this["TABLET_IP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EKRANY_IP {
+            get {
+                return ((string)(this["EKRANY_IP"]));
+            }
+            set {
+                this["EKRANY_IP"] = value;
+            }
+        }
     }
 }

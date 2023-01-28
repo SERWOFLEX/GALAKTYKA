@@ -23,6 +23,7 @@ const  static  uint8_t dnsip [] = { 192 , 168 , 1 , 1 };
 #define reset_273 16
 #define aktywacja_wyjscie 17
 #define sygnal_wyjscie 5
+#define ZWORA_KAPSULA 18
 
 byte stan_gry;
 byte play_palac;
@@ -160,6 +161,7 @@ if(myString == "RESET"){
     digitalWrite(reset_273,LOW);
 ether.sendUdp("PRZYCISKI ZRESETOWANE", 21, srcPort, komp, dstPort );
      digitalWrite(aktywacja_wyjscie,LOW);
+     digitalWrite(ZWORA_KAPSULA,LOW);
      
      if(digitalRead(sygnal_wyjscie) == LOW){
        ether.sendUdp("WYJSCIE AKTYWNE", 15, srcPort, komp, dstPort );
@@ -191,7 +193,10 @@ ether.sendUdp("PRZYCISKI ZRESETOWANE", 21, srcPort, komp, dstPort );
  ether.sendUdp("WYJSCIE AKTYWNE", 17, srcPort, komp, dstPort );
     
   }
-  
+if(myString == "ZW KAPS ON"){
+  digitalWrite(ZWORA_KAPSULA,HIGH);
+  ether.sendUdp("ZWORA KAPSULA ON", 16, srcPort, komp, dstPort );
+}
 myString="";
   
 }
@@ -206,6 +211,8 @@ void setup() {
   pinMode(reset_kule,OUTPUT);
   pinMode(reset_273,OUTPUT);
   pinMode(aktywacja_wyjscie,OUTPUT);
+  pinMode(ZWORA_KAPSULA,OUTPUT);
+  
 
 START_GRY.attach(start_gry);
 MUZA_PALAC.attach(muza_palac);

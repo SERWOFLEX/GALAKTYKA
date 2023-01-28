@@ -61,6 +61,12 @@
             this.label28 = new System.Windows.Forms.Label();
             this.button_CZAS_5_EN = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button_ZAPIS_TABLET_IP = new System.Windows.Forms.Button();
+            this.textBox_IP_TABLET = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button_ZAPISZ_EKRANY_IP = new System.Windows.Forms.Button();
+            this.textBox_KOMP_EKRANY_IP = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -369,11 +375,69 @@
             this.label29.TabIndex = 51;
             this.label29.Text = "CZAS 5 min EN";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(756, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "TABLET IP";
+            // 
+            // button_ZAPIS_TABLET_IP
+            // 
+            this.button_ZAPIS_TABLET_IP.Location = new System.Drawing.Point(1024, 97);
+            this.button_ZAPIS_TABLET_IP.Name = "button_ZAPIS_TABLET_IP";
+            this.button_ZAPIS_TABLET_IP.Size = new System.Drawing.Size(75, 23);
+            this.button_ZAPIS_TABLET_IP.TabIndex = 55;
+            this.button_ZAPIS_TABLET_IP.Text = "ZAPISZ";
+            this.button_ZAPIS_TABLET_IP.UseVisualStyleBackColor = true;
+            this.button_ZAPIS_TABLET_IP.Click += new System.EventHandler(this.button_ZAPIS_TABLET_IP_Click);
+            // 
+            // textBox_IP_TABLET
+            // 
+            this.textBox_IP_TABLET.Location = new System.Drawing.Point(864, 99);
+            this.textBox_IP_TABLET.Name = "textBox_IP_TABLET";
+            this.textBox_IP_TABLET.Size = new System.Drawing.Size(118, 20);
+            this.textBox_IP_TABLET.TabIndex = 54;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(756, 142);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "KOMP EKRANY IP";
+            // 
+            // button_ZAPISZ_EKRANY_IP
+            // 
+            this.button_ZAPISZ_EKRANY_IP.Location = new System.Drawing.Point(1024, 137);
+            this.button_ZAPISZ_EKRANY_IP.Name = "button_ZAPISZ_EKRANY_IP";
+            this.button_ZAPISZ_EKRANY_IP.Size = new System.Drawing.Size(75, 23);
+            this.button_ZAPISZ_EKRANY_IP.TabIndex = 58;
+            this.button_ZAPISZ_EKRANY_IP.Text = "ZAPISZ";
+            this.button_ZAPISZ_EKRANY_IP.UseVisualStyleBackColor = true;
+            this.button_ZAPISZ_EKRANY_IP.Click += new System.EventHandler(this.button_ZAPISZ_EKRANY_IP_Click);
+            // 
+            // textBox_KOMP_EKRANY_IP
+            // 
+            this.textBox_KOMP_EKRANY_IP.Location = new System.Drawing.Point(864, 139);
+            this.textBox_KOMP_EKRANY_IP.Name = "textBox_KOMP_EKRANY_IP";
+            this.textBox_KOMP_EKRANY_IP.Size = new System.Drawing.Size(118, 20);
+            this.textBox_KOMP_EKRANY_IP.TabIndex = 57;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1129, 610);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button_ZAPISZ_EKRANY_IP);
+            this.Controls.Add(this.textBox_KOMP_EKRANY_IP);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button_ZAPIS_TABLET_IP);
+            this.Controls.Add(this.textBox_IP_TABLET);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.button_CZAS_5_EN);
             this.Controls.Add(this.label29);
@@ -451,5 +515,11 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button button_CZAS_5_EN;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_ZAPIS_TABLET_IP;
+        private System.Windows.Forms.TextBox textBox_IP_TABLET;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button_ZAPISZ_EKRANY_IP;
+        private System.Windows.Forms.TextBox textBox_KOMP_EKRANY_IP;
     }
 }
