@@ -1,0 +1,63 @@
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.exe.config
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.exe.manifest
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.application
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.exe
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.pdb
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\bin\Debug\Interop.WMPLib.dll
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA.csprojAssemblyReference.cache
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA.csproj.ResolveComReference.cache
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form1.resources
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form2.resources
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Properties.Resources.resources
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA.csproj.GenerateResource.cache
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.exe.manifest
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.application
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.exe
+C:\Users\Marcin\Desktop\Nowy folder (7)\ConsoleApplication2udp\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.pdb
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.exe.config
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.exe.manifest
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.application
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.exe
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.pdb
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\Interop.WMPLib.dll
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA.csprojAssemblyReference.cache
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA.csproj.ResolveComReference.cache
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form1.resources
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form2.resources
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Properties.Resources.resources
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA.csproj.GenerateResource.cache
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.exe.manifest
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.application
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.exe
+C:\Users\Marcin\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.pdb
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.exe.config
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.exe.manifest
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.application
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.exe
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\GALAKTYKA TAJEMNIC.pdb
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\Interop.WMPLib.dll
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA.csproj.ResolveComReference.cache
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form1.resources
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form2.resources
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Properties.Resources.resources
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA.csproj.GenerateResource.cache
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.exe.manifest
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.application
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.exe
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA TAJEMNIC.pdb
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA.csproj.CopyComplete
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\WebSocket4Net.dll
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dell\Documents\GitHub\GALAKTYKA\GALAKTYKA\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA.csproj.AssemblyReference.cache

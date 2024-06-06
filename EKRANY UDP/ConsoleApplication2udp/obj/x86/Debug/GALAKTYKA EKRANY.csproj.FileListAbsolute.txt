@@ -1,0 +1,25 @@
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\bin\Debug\GALAKTYKA EKRANY.exe.config
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\bin\Debug\GALAKTYKA EKRANY.exe.manifest
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\bin\Debug\GALAKTYKA EKRANY.application
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\bin\Debug\GALAKTYKA EKRANY.exe
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\bin\Debug\GALAKTYKA EKRANY.pdb
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\bin\Debug\Newtonsoft.Json.dll
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\bin\Debug\SuperSocket.ClientEngine.dll
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\bin\Debug\WebSocket4Net.dll
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\bin\Debug\Newtonsoft.Json.xml
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\bin\Debug\Interop.WMPLib.dll
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\bin\Debug\AxInterop.WMPLib.dll
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EKRANY.csproj.AssemblyReference.cache
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\Interop.WMPLib.dll
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\AxInterop.WMPLib.dll
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EKRANY.csproj.ResolveComReference.cache
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form1.resources
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Form2.resources
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\ConsoleApplication2udp.Properties.Resources.resources
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EKRANY.csproj.GenerateResource.cache
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EKRANY.csproj.CoreCompileInputs.cache
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EKRANY.exe.manifest
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EKRANY.application
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EKRANY.csproj.CopyComplete
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EKRANY.exe
+D:\GALAKTYKA EKRANY\EKRANY UDP\ConsoleApplication2udp\obj\x86\Debug\GALAKTYKA EKRANY.pdb
