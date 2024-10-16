@@ -49,6 +49,7 @@ namespace ConsoleApplication2udp
         public string nazwa2 = "Obraz 2";
         public bool costam = true;
         public bool wersja_jezykowa;
+        public int glosnisc_podklad_gluwny = 50;
 
         public Form1()
         {
@@ -132,7 +133,8 @@ namespace ConsoleApplication2udp
             wersja_jezykowa = false;
 
 
-            
+            if (!Directory.Exists("C:\\GALAKTYKA ZAPIS PODPOWIEDZI"))
+                Directory.CreateDirectory("C:\\GALAKTYKA ZAPIS PODPOWIEDZI");
 
             foreach (var voice in _SS.GetInstalledVoices())
             {
@@ -602,6 +604,7 @@ namespace ConsoleApplication2udp
             String val = trackBar2.Value.ToString();
             label9.Text = val;
             STATEK_PLAYER.settings.volume = trackBar2.Value;
+            glosnisc_podklad_gluwny = trackBar2.Value;
         }
 
         private void trackBar3_Scroll(object sender, EventArgs e)
@@ -980,6 +983,18 @@ namespace ConsoleApplication2udp
                // Properties.Settings.Default.WERSJA_JEZYKOWA = false;
                 //Properties.Settings.Default.Save();
             }
+            if (Application.OpenForms["podpowiedzi"] != null)
+            {
+
+                Application.OpenForms["podpowiedzi"].Close();
+
+            }
+            else
+            {
+                
+
+
+            }
         }
 
         private void button_ZWORA_KAPSULA_Click(object sender, EventArgs e)
@@ -1080,6 +1095,23 @@ namespace ConsoleApplication2udp
             }
 
 
+        }
+
+        private void pODPOWIEDZINAGRANEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["podpowiedzi"] != null)
+            {
+
+
+
+            }
+            else
+            {
+                podpowiedzi podpow = new podpowiedzi(this);
+                podpow.Show();
+
+
+            }
         }
     }
 }

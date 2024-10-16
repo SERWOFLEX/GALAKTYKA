@@ -70,9 +70,6 @@
             this.label_KAPSULA = new System.Windows.Forms.Label();
             this.label_PALAC = new System.Windows.Forms.Label();
             this.label_INFO = new System.Windows.Forms.Label();
-            this.WOJNA_PLAYER = new AxWMPLib.AxWindowsMediaPlayer();
-            this.STATEK_PLAYER = new AxWMPLib.AxWindowsMediaPlayer();
-            this.CZASY_PALYER = new AxWMPLib.AxWindowsMediaPlayer();
             this.textBox_SPEAK = new System.Windows.Forms.TextBox();
             this.button_PLAY_SPEAK = new System.Windows.Forms.Button();
             this.label_TEMPO = new System.Windows.Forms.Label();
@@ -82,11 +79,6 @@
             this.trackBar_TEMPO = new System.Windows.Forms.TrackBar();
             this.trackBar_VOL_TEXT_NA_MOWE = new System.Windows.Forms.TrackBar();
             this.label11 = new System.Windows.Forms.Label();
-            this.button_PLAY_PODPOWIEDZ = new System.Windows.Forms.Button();
-            this.button_WCZYTAJ = new System.Windows.Forms.Button();
-            this.button_ZAPISZ = new System.Windows.Forms.Button();
-            this.button_DODAJ = new System.Windows.Forms.Button();
-            this.listBox_WIDOK = new System.Windows.Forms.ListBox();
             this.label_SIEC = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.button_RESET_KULE = new System.Windows.Forms.Button();
@@ -107,16 +99,25 @@
             this.button_START_STATKU = new System.Windows.Forms.Button();
             this.button_START_KOSMOS = new System.Windows.Forms.Button();
             this.button_START_WOJNA = new System.Windows.Forms.Button();
+            this.WOJNA_PLAYER = new AxWMPLib.AxWindowsMediaPlayer();
+            this.STATEK_PLAYER = new AxWMPLib.AxWindowsMediaPlayer();
+            this.CZASY_PALYER = new AxWMPLib.AxWindowsMediaPlayer();
+            this.button_DODAJ = new System.Windows.Forms.Button();
+            this.button_ZAPISZ = new System.Windows.Forms.Button();
+            this.button_WCZYTAJ = new System.Windows.Forms.Button();
+            this.button_PLAY_PODPOWIEDZ = new System.Windows.Forms.Button();
+            this.listBox_WIDOK = new System.Windows.Forms.ListBox();
+            this.pODPOWIEDZINAGRANEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_WOJNA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_TEMPO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_VOL_TEXT_NA_MOWE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WOJNA_PLAYER)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.STATEK_PLAYER)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CZASY_PALYER)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_TEMPO)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_VOL_TEXT_NA_MOWE)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_message
@@ -229,7 +230,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uSTAWIENIAToolStripMenuItem});
+            this.uSTAWIENIAToolStripMenuItem,
+            this.pODPOWIEDZINAGRANEToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1167, 24);
@@ -523,39 +525,6 @@
             this.label_INFO.TabIndex = 135;
             this.label_INFO.Text = "GRA W TOKU";
             // 
-            // WOJNA_PLAYER
-            // 
-            this.WOJNA_PLAYER.Enabled = true;
-            this.WOJNA_PLAYER.Location = new System.Drawing.Point(448, 71);
-            this.WOJNA_PLAYER.Name = "WOJNA_PLAYER";
-            this.WOJNA_PLAYER.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WOJNA_PLAYER.OcxState")));
-            this.WOJNA_PLAYER.Size = new System.Drawing.Size(75, 23);
-            this.WOJNA_PLAYER.TabIndex = 119;
-            this.WOJNA_PLAYER.Visible = false;
-            this.WOJNA_PLAYER.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.WOJNA_PLAYER_PlayStateChange);
-            // 
-            // STATEK_PLAYER
-            // 
-            this.STATEK_PLAYER.Enabled = true;
-            this.STATEK_PLAYER.Location = new System.Drawing.Point(448, 33);
-            this.STATEK_PLAYER.Name = "STATEK_PLAYER";
-            this.STATEK_PLAYER.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("STATEK_PLAYER.OcxState")));
-            this.STATEK_PLAYER.Size = new System.Drawing.Size(96, 32);
-            this.STATEK_PLAYER.TabIndex = 118;
-            this.STATEK_PLAYER.Visible = false;
-            this.STATEK_PLAYER.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.STATEK_PLAYER_PlayStateChange);
-            // 
-            // CZASY_PALYER
-            // 
-            this.CZASY_PALYER.Enabled = true;
-            this.CZASY_PALYER.Location = new System.Drawing.Point(455, 95);
-            this.CZASY_PALYER.Name = "CZASY_PALYER";
-            this.CZASY_PALYER.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("CZASY_PALYER.OcxState")));
-            this.CZASY_PALYER.Size = new System.Drawing.Size(68, 46);
-            this.CZASY_PALYER.TabIndex = 10;
-            this.CZASY_PALYER.Visible = false;
-            this.CZASY_PALYER.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.CZASY_PALYER_PlayStateChange);
-            // 
             // textBox_SPEAK
             // 
             this.textBox_SPEAK.Location = new System.Drawing.Point(819, 56);
@@ -645,55 +614,6 @@
             this.label11.Size = new System.Drawing.Size(111, 13);
             this.label11.TabIndex = 144;
             this.label11.Text = "TEKST NA MOWĘ";
-            // 
-            // button_PLAY_PODPOWIEDZ
-            // 
-            this.button_PLAY_PODPOWIEDZ.Location = new System.Drawing.Point(937, 598);
-            this.button_PLAY_PODPOWIEDZ.Name = "button_PLAY_PODPOWIEDZ";
-            this.button_PLAY_PODPOWIEDZ.Size = new System.Drawing.Size(75, 23);
-            this.button_PLAY_PODPOWIEDZ.TabIndex = 190;
-            this.button_PLAY_PODPOWIEDZ.Text = "PLAY";
-            this.button_PLAY_PODPOWIEDZ.UseVisualStyleBackColor = true;
-            this.button_PLAY_PODPOWIEDZ.Click += new System.EventHandler(this.button_PLAY_PODPOWIEDZ_Click);
-            // 
-            // button_WCZYTAJ
-            // 
-            this.button_WCZYTAJ.Location = new System.Drawing.Point(877, 664);
-            this.button_WCZYTAJ.Name = "button_WCZYTAJ";
-            this.button_WCZYTAJ.Size = new System.Drawing.Size(200, 23);
-            this.button_WCZYTAJ.TabIndex = 189;
-            this.button_WCZYTAJ.Text = "WCZYTAJ LISTĘ";
-            this.button_WCZYTAJ.UseVisualStyleBackColor = true;
-            this.button_WCZYTAJ.Click += new System.EventHandler(this.button_WCZYTAJ_Click);
-            // 
-            // button_ZAPISZ
-            // 
-            this.button_ZAPISZ.Location = new System.Drawing.Point(987, 634);
-            this.button_ZAPISZ.Name = "button_ZAPISZ";
-            this.button_ZAPISZ.Size = new System.Drawing.Size(90, 23);
-            this.button_ZAPISZ.TabIndex = 188;
-            this.button_ZAPISZ.Text = "ZAPISZ";
-            this.button_ZAPISZ.UseVisualStyleBackColor = true;
-            this.button_ZAPISZ.Click += new System.EventHandler(this.button_ZAPISZ_Click);
-            // 
-            // button_DODAJ
-            // 
-            this.button_DODAJ.Location = new System.Drawing.Point(877, 634);
-            this.button_DODAJ.Name = "button_DODAJ";
-            this.button_DODAJ.Size = new System.Drawing.Size(90, 23);
-            this.button_DODAJ.TabIndex = 187;
-            this.button_DODAJ.Text = "DODAJ";
-            this.button_DODAJ.UseVisualStyleBackColor = true;
-            this.button_DODAJ.Click += new System.EventHandler(this.button_DODAJ_Click);
-            // 
-            // listBox_WIDOK
-            // 
-            this.listBox_WIDOK.FormattingEnabled = true;
-            this.listBox_WIDOK.HorizontalScrollbar = true;
-            this.listBox_WIDOK.Location = new System.Drawing.Point(819, 400);
-            this.listBox_WIDOK.Name = "listBox_WIDOK";
-            this.listBox_WIDOK.Size = new System.Drawing.Size(314, 173);
-            this.listBox_WIDOK.TabIndex = 191;
             // 
             // label_SIEC
             // 
@@ -866,6 +786,95 @@
             this.button_START_WOJNA.UseVisualStyleBackColor = true;
             this.button_START_WOJNA.Click += new System.EventHandler(this.button_START_WOJNA_Click);
             // 
+            // WOJNA_PLAYER
+            // 
+            this.WOJNA_PLAYER.Enabled = true;
+            this.WOJNA_PLAYER.Location = new System.Drawing.Point(448, 71);
+            this.WOJNA_PLAYER.Name = "WOJNA_PLAYER";
+            this.WOJNA_PLAYER.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WOJNA_PLAYER.OcxState")));
+            this.WOJNA_PLAYER.Size = new System.Drawing.Size(75, 23);
+            this.WOJNA_PLAYER.TabIndex = 119;
+            this.WOJNA_PLAYER.Visible = false;
+            this.WOJNA_PLAYER.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.WOJNA_PLAYER_PlayStateChange);
+            // 
+            // STATEK_PLAYER
+            // 
+            this.STATEK_PLAYER.Enabled = true;
+            this.STATEK_PLAYER.Location = new System.Drawing.Point(448, 33);
+            this.STATEK_PLAYER.Name = "STATEK_PLAYER";
+            this.STATEK_PLAYER.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("STATEK_PLAYER.OcxState")));
+            this.STATEK_PLAYER.Size = new System.Drawing.Size(96, 32);
+            this.STATEK_PLAYER.TabIndex = 118;
+            this.STATEK_PLAYER.Visible = false;
+            this.STATEK_PLAYER.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.STATEK_PLAYER_PlayStateChange);
+            // 
+            // CZASY_PALYER
+            // 
+            this.CZASY_PALYER.Enabled = true;
+            this.CZASY_PALYER.Location = new System.Drawing.Point(455, 95);
+            this.CZASY_PALYER.Name = "CZASY_PALYER";
+            this.CZASY_PALYER.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("CZASY_PALYER.OcxState")));
+            this.CZASY_PALYER.Size = new System.Drawing.Size(68, 46);
+            this.CZASY_PALYER.TabIndex = 10;
+            this.CZASY_PALYER.Visible = false;
+            this.CZASY_PALYER.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.CZASY_PALYER_PlayStateChange);
+            // 
+            // button_DODAJ
+            // 
+            this.button_DODAJ.Location = new System.Drawing.Point(877, 634);
+            this.button_DODAJ.Name = "button_DODAJ";
+            this.button_DODAJ.Size = new System.Drawing.Size(90, 23);
+            this.button_DODAJ.TabIndex = 187;
+            this.button_DODAJ.Text = "DODAJ";
+            this.button_DODAJ.UseVisualStyleBackColor = true;
+            this.button_DODAJ.Click += new System.EventHandler(this.button_DODAJ_Click);
+            // 
+            // button_ZAPISZ
+            // 
+            this.button_ZAPISZ.Location = new System.Drawing.Point(987, 634);
+            this.button_ZAPISZ.Name = "button_ZAPISZ";
+            this.button_ZAPISZ.Size = new System.Drawing.Size(90, 23);
+            this.button_ZAPISZ.TabIndex = 188;
+            this.button_ZAPISZ.Text = "ZAPISZ";
+            this.button_ZAPISZ.UseVisualStyleBackColor = true;
+            this.button_ZAPISZ.Click += new System.EventHandler(this.button_ZAPISZ_Click);
+            // 
+            // button_WCZYTAJ
+            // 
+            this.button_WCZYTAJ.Location = new System.Drawing.Point(877, 664);
+            this.button_WCZYTAJ.Name = "button_WCZYTAJ";
+            this.button_WCZYTAJ.Size = new System.Drawing.Size(200, 23);
+            this.button_WCZYTAJ.TabIndex = 189;
+            this.button_WCZYTAJ.Text = "WCZYTAJ LISTĘ";
+            this.button_WCZYTAJ.UseVisualStyleBackColor = true;
+            this.button_WCZYTAJ.Click += new System.EventHandler(this.button_WCZYTAJ_Click);
+            // 
+            // button_PLAY_PODPOWIEDZ
+            // 
+            this.button_PLAY_PODPOWIEDZ.Location = new System.Drawing.Point(937, 598);
+            this.button_PLAY_PODPOWIEDZ.Name = "button_PLAY_PODPOWIEDZ";
+            this.button_PLAY_PODPOWIEDZ.Size = new System.Drawing.Size(75, 23);
+            this.button_PLAY_PODPOWIEDZ.TabIndex = 190;
+            this.button_PLAY_PODPOWIEDZ.Text = "PLAY";
+            this.button_PLAY_PODPOWIEDZ.UseVisualStyleBackColor = true;
+            this.button_PLAY_PODPOWIEDZ.Click += new System.EventHandler(this.button_PLAY_PODPOWIEDZ_Click);
+            // 
+            // listBox_WIDOK
+            // 
+            this.listBox_WIDOK.FormattingEnabled = true;
+            this.listBox_WIDOK.HorizontalScrollbar = true;
+            this.listBox_WIDOK.Location = new System.Drawing.Point(819, 400);
+            this.listBox_WIDOK.Name = "listBox_WIDOK";
+            this.listBox_WIDOK.Size = new System.Drawing.Size(314, 173);
+            this.listBox_WIDOK.TabIndex = 191;
+            // 
+            // pODPOWIEDZINAGRANEToolStripMenuItem
+            // 
+            this.pODPOWIEDZINAGRANEToolStripMenuItem.Name = "pODPOWIEDZINAGRANEToolStripMenuItem";
+            this.pODPOWIEDZINAGRANEToolStripMenuItem.Size = new System.Drawing.Size(155, 20);
+            this.pODPOWIEDZINAGRANEToolStripMenuItem.Text = "PODPOWIEDZI NAGRANE";
+            this.pODPOWIEDZINAGRANEToolStripMenuItem.Click += new System.EventHandler(this.pODPOWIEDZINAGRANEToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -951,11 +960,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_WOJNA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_TEMPO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_VOL_TEXT_NA_MOWE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WOJNA_PLAYER)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.STATEK_PLAYER)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CZASY_PALYER)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_TEMPO)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_VOL_TEXT_NA_MOWE)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -990,17 +999,12 @@
         private System.Windows.Forms.Button button_STATEK;
         private System.Windows.Forms.Button button_KAPSULA;
         private System.Windows.Forms.Button button_PALAC;
-        private AxWMPLib.AxWindowsMediaPlayer STATEK_PLAYER;
-        private AxWMPLib.AxWindowsMediaPlayer WOJNA_PLAYER;
         private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label_CZASY;
         private System.Windows.Forms.Label label_STATEK;
         private System.Windows.Forms.Label label_WOJNA;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TrackBar trackBar_WOJNA;
         private System.Windows.Forms.Button button_WOJNA;
         private System.Windows.Forms.Label label_KAPSULA;
         private System.Windows.Forms.Label label_PALAC;
@@ -1014,11 +1018,6 @@
         private System.Windows.Forms.TrackBar trackBar_TEMPO;
         private System.Windows.Forms.TrackBar trackBar_VOL_TEXT_NA_MOWE;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button_PLAY_PODPOWIEDZ;
-        private System.Windows.Forms.Button button_WCZYTAJ;
-        private System.Windows.Forms.Button button_ZAPISZ;
-        private System.Windows.Forms.Button button_DODAJ;
-        private System.Windows.Forms.ListBox listBox_WIDOK;
         private System.Windows.Forms.Label label_SIEC;
         private System.Windows.Forms.Timer timer2;
         public System.Windows.Forms.TextBox textBox_port;
@@ -1040,6 +1039,17 @@
         private System.Windows.Forms.Button button_START_STATKU;
         private System.Windows.Forms.Button button_START_KOSMOS;
         private System.Windows.Forms.Button button_START_WOJNA;
+        private System.Windows.Forms.Button button_DODAJ;
+        private System.Windows.Forms.Button button_ZAPISZ;
+        private System.Windows.Forms.Button button_WCZYTAJ;
+        private System.Windows.Forms.Button button_PLAY_PODPOWIEDZ;
+        private System.Windows.Forms.ListBox listBox_WIDOK;
+        private System.Windows.Forms.ToolStripMenuItem pODPOWIEDZINAGRANEToolStripMenuItem;
+        public AxWMPLib.AxWindowsMediaPlayer STATEK_PLAYER;
+        public AxWMPLib.AxWindowsMediaPlayer WOJNA_PLAYER;
+        public System.Windows.Forms.TrackBar trackBar2;
+        public System.Windows.Forms.TrackBar trackBar_WOJNA;
+        public System.Windows.Forms.Label label9;
     }
 }
 
